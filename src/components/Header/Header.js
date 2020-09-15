@@ -18,7 +18,7 @@ const Header = () => {
     <div>
       <div className={`top-menu ${navMenu}`}>
         <div className='top-menu-lead'>
-          <img src='/logo512.png' width={100} height={50} />
+          <img src='/logo512.png' alt='logo' width={100} height={50} />
           <h3>plus infinity labs</h3>
         </div>
 

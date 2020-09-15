@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
+import Landing from './components/Landing';
+
 const Home = () => {
   return (
     <div>
       <Header />
-      <p>Hello world</p>
+      <Landing />
     </div>
   );
 };
