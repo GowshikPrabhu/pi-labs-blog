@@ -75,7 +75,7 @@
 @media screen and (max-width: 600px) {
   .top-menu-lead {
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: 10px;
     float: none;
   }
@@ -94,6 +94,7 @@
 
   .top-menu-icon {
     display: block !important;
+    padding-top: 25px !important;
   }
 }
 

@@ -1,5 +1,5 @@
 .parallax {
-  height: 70vh;
+  height: 40vh;
   background-image: url('../../../assets/images/img-1.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -11,7 +11,7 @@
 .blur {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
-  height: 70vh;
+  height: 40vh;
   width: 100%;
 }
 
@@ -51,7 +51,7 @@
 @media only screen and (min-width: 768px) {
   .parallax,
   .blur {
-    height: 60vh;
+    height: 70vh;
   }
   .center h2 {
     font-size: 50px;
