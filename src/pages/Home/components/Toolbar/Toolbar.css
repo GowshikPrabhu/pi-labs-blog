@@ -1,0 +1,10 @@
+.search-bar {
+  display: flex;
+  flex-direction: row;
+}
+.search-icon {
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #dddddd;
+}
