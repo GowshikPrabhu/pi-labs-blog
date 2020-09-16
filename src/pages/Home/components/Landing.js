@@ -4,9 +4,11 @@ import './Landing.css';
 const Landing = () => {
   return (
     <div className='parallax'>
-      <div className='center'>
-        <h2>Love coding?</h2>
-        <p>Join us and have fun.</p>
+      <div className='blur'>
+        <div className='center'>
+          <h2>Our motto</h2>
+          <p>Search, Learn, Share and Have fun</p>
+        </div>
       </div>
     </div>
   );
