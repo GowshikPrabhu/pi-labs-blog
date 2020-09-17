@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import './Toolbar.css';
+import './Searchbar.css';
 
 /**
  * Search bar
@@ -10,7 +10,7 @@ import './Toolbar.css';
  * @param {Function} onSearchChange Input change handler
  * @param {Function} onSearchSubmit Handle sublmit
  */
-const Toolbar = ({ value, onSearchChange, onSearchSubmit }) => {
+const Searchbar = ({ value, onSearchChange, onSearchSubmit }) => {
   return (
     <div>
       <label>Search</label>
@@ -36,7 +36,7 @@ const Toolbar = ({ value, onSearchChange, onSearchSubmit }) => {
   );
 };
 
-Toolbar.propTypes = {
+Searchbar.propTypes = {
   /** Search value */
   value: PropTypes.string,
   /** Function to handle search input change */
@@ -45,10 +45,10 @@ Toolbar.propTypes = {
   onSearchSubmit: PropTypes.func
 };
 
-Toolbar.defaultProps = {
+Searchbar.defaultProps = {
   value: '',
   onSearchChange: () => {},
   onSearchSubmit: () => {}
 };
 
-export default Toolbar;
+export default Searchbar;

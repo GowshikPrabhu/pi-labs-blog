@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import Landing from './components/Landing/Landing';
-import Toolbar from './components/Toolbar/Toolbar';
+import Searchbar from './components/Searchbar/Searchbar';
 import './Home.css';
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
         </div>
         <div className='layout-container toolbar'>
           {/* Search and filter */}
-          <Toolbar
+          <Searchbar
             value={searchValue}
             onSearchChange={handleSearch}
             onSearchSubmit={handleSearchSubmit}
