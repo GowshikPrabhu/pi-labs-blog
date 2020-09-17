@@ -21,6 +21,7 @@ const Toolbar = ({ value, onSearchChange, onSearchSubmit }) => {
           name='search'
           value={value}
           maxLength={100}
+          className='search-input'
           placeholder='Enter any search keyword'
           onChange={(t) => onSearchChange(t)}
           onSubmit={onSearchSubmit}
