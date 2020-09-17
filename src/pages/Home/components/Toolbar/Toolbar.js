@@ -23,7 +23,7 @@ const Toolbar = ({ value, onSearchChange, onSearchSubmit }) => {
           maxLength={100}
           className='search-input'
           placeholder='Enter any search keyword'
-          onChange={(t) => onSearchChange(t)}
+          onChange={(text) => onSearchChange(text)}
           onSubmit={onSearchSubmit}
         />
         <FontAwesomeIcon
