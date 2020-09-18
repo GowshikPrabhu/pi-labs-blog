@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import Landing from './components/Landing/Landing';
 import Searchbar from './components/Searchbar/Searchbar';
+import Filter from './components/Filter/Filter';
 import './Home.css';
 
 const Home = () => {
@@ -34,8 +36,10 @@ const Home = () => {
             onSearchChange={handleSearch}
             onSearchSubmit={handleSearchSubmit}
           />
+          <Filter />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
