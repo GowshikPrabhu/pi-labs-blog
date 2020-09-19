@@ -13,8 +13,6 @@ import './Searchbar.css';
 const Searchbar = ({ value, onSearchChange, onSearchSubmit }) => {
   return (
     <div>
-      <label>Search</label>
-      <br />
       <div className='search-bar'>
         <input
           type='text'
