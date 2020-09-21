@@ -4,7 +4,10 @@ import Footer from '../../components/Footer/Footer';
 import Landing from './components/Landing/Landing';
 import Searchbar from './components/Searchbar/Searchbar';
 import Filter from './components/Filter/Filter';
+import Modal from './components/Modal/Modal';
 import './Home.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 const data = [
   { id: 1, value: 'Algorithm', isChecked: false },
@@ -16,6 +19,7 @@ const data = [
 const Home = () => {
   const [searchValue, setSearchValue] = useState('');
   const [tags, setTags] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSearchSubmit = () => {
     if (searchValue.length !== 0) {
@@ -50,6 +54,10 @@ const Home = () => {
     // console.log(tags);
   };
 
+  const toggleModal = () => {
+    setShowModal((prevState) => !prevState);
+  };
+
   useState(() => {
     setTags(data);
   }, []);
@@ -59,6 +67,26 @@ const Home = () => {
       <Header />
       <Landing />
       <div className='home-layout'>
+        <div className='filter-modal'>
+          <FontAwesomeIcon
+            icon={faFilter}
+            className='filter-modal-button'
+            onClick={toggleModal}
+          />
+          <Modal show={showModal} toggleModal={toggleModal}>
+            <Searchbar
+              value={searchValue}
+              onSearchChange={handleSearch}
+              onSearchSubmit={handleSearchSubmit}
+            />
+            <Filter
+              tags={tags}
+              onSelect={handleTagSelection}
+              clearSelection={clearSelection}
+              filterSelection={filterResults}
+            />
+          </Modal>
+        </div>
         <div className='layout-container'>
           {/* Blog cards */}
           <p>Blog posts</p>
