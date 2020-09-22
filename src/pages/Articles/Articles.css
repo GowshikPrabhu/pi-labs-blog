@@ -1,0 +1,35 @@
+.article-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #212121;
+  text-transform: capitalize;
+  width: fit-content;
+  background-image: linear-gradient(to right, #c6ecfc, #ffffff);
+}
+
+.divider {
+  margin-top: 7px;
+  height: 3px;
+  width: 80px;
+  background-color: #4ba9d0;
+}
+
+.article-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.max-img-card {
+  height: 300px;
+  width: 200px;
+  overflow: hidden;
+}
+.max-img-card img {
+  width: 100px;
+  height: 200px;
+}
