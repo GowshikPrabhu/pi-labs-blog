@@ -1,7 +1,20 @@
+.home-layout {
+  margin-top: 40px;
+}
 .toolbar {
   display: none;
 }
-
+.filter-modal {
+  display: flex;
+  justify-content: flex-end;
+}
+.filter-modal-button {
+  margin-right: 20px;
+  font-size: 20px;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px;
+}
 @media only screen and (min-width: 600px) {
 }
 
@@ -17,5 +30,8 @@
   .toolbar {
     display: flex;
     flex-direction: column;
+  }
+  .filter-modal {
+    display: none;
   }
 }
