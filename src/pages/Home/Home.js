@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import Landing from './components/Landing/Landing';
 import Searchbar from './components/Searchbar/Searchbar';
 import Filter from './components/Filter/Filter';
+import Articles from '../Articles/Articles';
 import './Home.css';
 
 const data = [
@@ -61,7 +62,7 @@ const Home = () => {
       <div className='home-layout'>
         <div className='layout-container'>
           {/* Blog cards */}
-          <p>Blog posts</p>
+          <Articles />
         </div>
         <div className='layout-container toolbar'>
           {/* Search and filter */}
