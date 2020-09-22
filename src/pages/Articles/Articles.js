@@ -1,6 +1,24 @@
 import React from 'react';
 import './Articles.css';
-import * as bgimg from '../../assets/images/img-1.jpg';
+import FullImageCard from './components/FullImageCard/FullImageCard';
+
+const featuredBlogs = [
+  {
+    id: 111,
+    title: 'Divide and conquer algorithms implementaion with c++',
+    tags: ['Algorithm', 'D and C']
+  },
+  {
+    id: 222,
+    title: 'Divide and conquer algorithms implementaion with c++',
+    tags: ['Algorithm', 'D and C']
+  },
+  {
+    id: 333,
+    title: 'Divide and conquer algorithms implementaion with c++',
+    tags: ['Algorithm', 'D and C']
+  }
+];
 
 const Articles = () => {
   return (
@@ -9,18 +27,9 @@ const Articles = () => {
         <div className='article-heading'>featured posts</div>
         <div className='divider'></div>
         <div className='article-body'>
-          <div className='max-img-card' onClick={() => {}}>
-            <img src={bgimg} alt='article-bg' />
-            <div className='full-overlay'>
-              <div className='card-tag-area'>
-                <div className='card-tag'>Algorithm</div>
-                <div className='card-tag'>D and C</div>
-              </div>
-              <div className='card-in-title'>
-                <p>Divide and conquer algorithms implementaion with c++</p>
-              </div>
-            </div>
-          </div>
+          {featuredBlogs.map((blog) => (
+            <FullImageCard key={blog.id} onCardPress={() => {}} blog={blog} />
+          ))}
         </div>
       </div>
     </div>
