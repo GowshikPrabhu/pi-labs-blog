@@ -3,7 +3,7 @@
   width: 300px;
   border-radius: 10px;
   position: relative;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   margin: 0px 20px;
 }
 .max-img-card:hover {

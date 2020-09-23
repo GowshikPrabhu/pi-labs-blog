@@ -20,19 +20,30 @@
 }
 
 .article-body {
-  margin-top: 20px;
+  margin-top: 20px 10px;
+  padding: 10px 0;
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  scrollbar-width: thin;
+}
+.article-body::-webkit-scrollbar:horizontal {
+  width: 12px;
 }
 
-/* .article-body::-webkit-scrollbar {
-  height: 4px;
-  width: 10px;
-  background-color: #dddddd;
-} */
+::-webkit-scrollbar-track:horizontal {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
 
-@media only screen and (max-width: 600px) {
+.article-body::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+/* @media only screen and (max-width: 600px) {
   .article-body {
     width: 400px;
     overflow: scroll;
@@ -44,4 +55,4 @@
     width: 500px;
     overflow: scroll;
   }
-}
+} */
