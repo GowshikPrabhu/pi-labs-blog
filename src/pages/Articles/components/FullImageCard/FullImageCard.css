@@ -1,8 +1,10 @@
 .max-img-card {
   height: 350px;
-  width: 30%;
+  width: 300px;
   border-radius: 10px;
   position: relative;
+  flex-shrink: 0;
+  margin: 0px 20px;
 }
 .max-img-card:hover {
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);

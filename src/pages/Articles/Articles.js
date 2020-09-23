@@ -20,6 +20,10 @@ const featuredBlogs = [
   }
 ];
 
+const scrollTo = (id) => {
+  document.getElementById(id).scrollBy(50, 0);
+};
+
 const Articles = () => {
   return (
     <div>
@@ -28,7 +32,12 @@ const Articles = () => {
         <div className='divider'></div>
         <div className='article-body'>
           {featuredBlogs.map((blog) => (
-            <FullImageCard key={blog.id} onCardPress={() => {}} blog={blog} />
+            <FullImageCard
+              id={blog.id}
+              key={blog.id}
+              onCardPress={() => {}}
+              blog={blog}
+            />
           ))}
         </div>
       </div>
