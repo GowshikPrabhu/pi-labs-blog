@@ -20,10 +20,6 @@ const featuredBlogs = [
   }
 ];
 
-const scrollTo = (id) => {
-  document.getElementById(id).scrollBy(50, 0);
-};
-
 const Articles = () => {
   return (
     <div>
