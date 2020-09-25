@@ -1,10 +1,14 @@
 .home-layout {
   margin-top: 40px;
 }
-.toolbar {
+.m-modal-hide {
   display: none;
 }
-.filter-modal {
+.m-modal-show {
+  display: visible;
+}
+.filter-modal,
+.m-modal-toggle {
   display: flex;
   justify-content: flex-end;
 }
@@ -14,6 +18,19 @@
   border: 2px solid #cccccc;
   border-radius: 5px;
   padding: 5px;
+}
+.m-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 1);
+  z-index: 1000;
+}
+.m-modal-container {
+  margin: 10px 0;
+  width: 100%;
 }
 @media only screen and (min-width: 600px) {
 }
@@ -27,11 +44,30 @@
     margin: 5px 5px 5px 5px;
     padding: 5px;
   }
+  .m-modal-show,
+  .m-modal-hide {
+    display: visible;
+  }
   .toolbar {
     display: flex;
     flex-direction: column;
   }
   .filter-modal {
     display: none;
+  }
+  .m-modal-toggle {
+    display: none;
+  }
+  .m-modal {
+    position: initial;
+    top: initial;
+    left: initial;
+    width: initial;
+    height: initial;
+    background: initial;
+    z-index: initial;
+  }
+  .m-modal-container {
+    margin: initial;
   }
 }

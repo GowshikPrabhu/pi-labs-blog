@@ -18,7 +18,7 @@ const data = [
 const Home = () => {
   const [searchValue, setSearchValue] = useState('');
   const [tags, setTags] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState('m-modal-hide');
 
   const handleSearchSubmit = () => {
     if (searchValue.length !== 0) {
@@ -54,7 +54,10 @@ const Home = () => {
   };
 
   const toggleModal = () => {
-    setShowModal((prevState) => !prevState);
+    setShowModal((prevState) => {
+      if (prevState === 'm-modal-show') return 'm-modal-hide';
+      return 'm-modal-show';
+    });
   };
 
   useState(() => {
@@ -71,7 +74,13 @@ const Home = () => {
             className='filter-modal-button'
             onClick={toggleModal}
           />
-          <Modal show={showModal} toggleModal={toggleModal}>
+        </div>
+        <div className='layout-container'>
+          {/* Blog cards */}
+          <Articles />
+        </div>
+        <div className={`layout-container toolbar m-modal ${showModal}`}>
+          <div className='m-modal-container'>
             <Searchbar
               value={searchValue}
               onSearchChange={handleSearch}
