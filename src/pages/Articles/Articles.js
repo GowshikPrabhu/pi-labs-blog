@@ -37,6 +37,21 @@ const Articles = () => {
           ))}
         </div>
       </div>
+      <div style={{ marginTop: '30px' }}></div>
+      <div className='article-container'>
+        <div className='article-heading'>popular posts</div>
+        <div className='divider'></div>
+        <div className='article-body'>
+          {featuredBlogs.map((blog) => (
+            <FullImageCard
+              id={blog.id}
+              key={blog.id}
+              onCardPress={() => {}}
+              blog={blog}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

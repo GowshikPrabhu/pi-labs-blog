@@ -6,10 +6,11 @@
 .article-heading {
   font-size: 20px;
   font-weight: 700;
+  padding: 1px 2px;
   color: #212121;
   text-transform: capitalize;
   width: fit-content;
-  background-image: linear-gradient(to right, #c6ecfc, #ffffff);
+  background-image: linear-gradient(to right, #bbe7fa, #cceefd, #ffffff);
 }
 
 .divider {
