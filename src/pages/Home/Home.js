@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Landing from './components/Landing/Landing';
 import Searchbar from './components/Searchbar/Searchbar';
 import Filter from './components/Filter/Filter';
 import Articles from '../Articles/Articles';
-import Modal from './components/Modal/Modal';
 import './Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
@@ -66,9 +64,8 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Landing />
       <div className='home-layout'>
-        <div className='filter-modal'>
+        <div className='m-modal-toggle'>
           <FontAwesomeIcon
             icon={faFilter}
             className='filter-modal-button'
@@ -86,25 +83,7 @@ const Home = () => {
               clearSelection={clearSelection}
               filterSelection={filterResults}
             />
-          </Modal>
-        </div>
-        <div className='layout-container'>
-          {/* Blog cards */}
-          <Articles />
-        </div>
-        <div className='layout-container toolbar'>
-          {/* Search and filter */}
-          <Searchbar
-            value={searchValue}
-            onSearchChange={handleSearch}
-            onSearchSubmit={handleSearchSubmit}
-          />
-          <Filter
-            tags={tags}
-            onSelect={handleTagSelection}
-            clearSelection={clearSelection}
-            filterSelection={filterResults}
-          />
+          </div>
         </div>
       </div>
       <Footer />
