@@ -78,6 +78,9 @@
 .action-icon {
   padding-right: 5px;
 }
+.filter-box label {
+  padding: 2px 0px;
+}
 @media only screen and (max-width: 768px) {
   .filter-box {
     width: 100%;
