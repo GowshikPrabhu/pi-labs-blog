@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import Searchbar from './components/Searchbar/Searchbar';
 import Filter from './components/Filter/Filter';
 import Articles from '../Articles/Articles';
+import AllArticles from '../AllArticles/AllArticles';
 import './Home.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faFilter } from '@fortawesome/free-solid-svg-icons';
@@ -98,6 +99,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <AllArticles />
       <Footer />
     </div>
   );
