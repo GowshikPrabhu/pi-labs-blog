@@ -1,0 +1,32 @@
+.recent-articles {
+  margin-left: 10px;
+}
+.recent-article-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.recent-blogs {
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  margin: 10px 10px;
+  padding: 5px;
+  box-shadow: 1px 4px 12px 0px #000000aa;
+}
+.horizontal-blog-view {
+  margin: 10px 20px;
+  width: 75%;
+}
+.recent-blogs img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+.hbv-left {
+  float: left;
+  padding: 0;
+  margin-bottom: -4px;
+}
+
+.hbv-right {
+  padding-left: 10px;
+}
