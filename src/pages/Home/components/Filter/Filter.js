@@ -13,22 +13,24 @@ const Filter = ({ tags, onSelect, clearSelection, filterSelection }) => {
   return (
     <div className='filter'>
       <div className='filter-box'>
-        <div className='box-heading'>Tags</div>
-        <div className='box-body'>
-          {tags.map((tag) => {
-            return (
-              <label key={tag.id} className='option-label'>
-                <input
-                  type='checkbox'
-                  key={tag.id}
-                  value={tag.value}
-                  checked={tag.isChecked}
-                  onChange={onSelect}
-                />
-                {tag.value}
-              </label>
-            );
-          })}
+        <div>
+          <div className='box-heading'>Tags</div>
+          <div className='box-body'>
+            {tags.map((tag) => {
+              return (
+                <label key={tag.id} className='option-label'>
+                  <input
+                    type='checkbox'
+                    key={tag.id}
+                    value={tag.value}
+                    checked={tag.isChecked}
+                    onChange={onSelect}
+                  />
+                  {tag.value}
+                </label>
+              );
+            })}
+          </div>
         </div>
         <div className='box-action'>
           <button
