@@ -5,8 +5,8 @@ import Searchbar from './components/Searchbar/Searchbar';
 import Filter from './components/Filter/Filter';
 import Articles from '../Articles/Articles';
 import './Home.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 const data = [
   { id: 1, value: 'Algorithm', isChecked: false },
@@ -68,13 +68,13 @@ const Home = () => {
     <div>
       <Header />
       <div className='home-layout'>
-        <div className='m-modal-toggle'>
+        {/* <div className='m-modal-toggle'>
           <FontAwesomeIcon
             icon={faFilter}
             className='filter-modal-button'
             onClick={toggleModal}
           />
-        </div>
+        </div> */}
         <div className='layout-container'>
           {/* Blog cards */}
           <Articles />
