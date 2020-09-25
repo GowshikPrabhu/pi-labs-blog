@@ -81,6 +81,9 @@ const Home = () => {
         </div>
         <div className={`layout-container toolbar m-modal ${showModal}`}>
           <div className='m-modal-container'>
+            <button className='m-modal-close' onClick={toggleModal}>
+              Close
+            </button>
             <Searchbar
               value={searchValue}
               onSearchChange={handleSearch}

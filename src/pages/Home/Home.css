@@ -29,8 +29,19 @@
   z-index: 1000;
 }
 .m-modal-container {
-  margin: 10px 0;
+  margin: 0px 0;
   width: 100%;
+}
+.m-modal-close {
+  width: 100%;
+  text-transform: uppercase;
+  background-color: #00a2ff;
+  color: #ffffff;
+  height: 7vh;
+  outline: none;
+  border: 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 @media only screen and (min-width: 600px) {
 }
@@ -69,5 +80,8 @@
   }
   .m-modal-container {
     margin: initial;
+  }
+  .m-modal-close {
+    display: none;
   }
 }
