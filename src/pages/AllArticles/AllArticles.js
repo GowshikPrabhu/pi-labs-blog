@@ -2,21 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './AllArticles.css';
 import * as bgimg from '../../assets/images/img-1.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faTag, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const recentBlogs = [
   {
     id: 111,
-    title: 'Divide and conquer algorithms implementaion with c++',
+    title: 'Divide and conquer algorithms implementation with c++',
     tags: ['Algorithm', 'D and C']
   },
   {
     id: 222,
-    title: 'Divide and conquer algorithms implementaion with c++',
+    title: 'Divide and conquer algorithms implementation with c++',
     tags: ['Algorithm', 'D and C']
   },
   {
     id: 333,
-    title: 'Divide and conquer algorithms implementaion with c++',
+    title: 'Divide and conquer algorithms implementation with c++',
     tags: ['Algorithm', 'D and C']
   }
 ];
@@ -35,43 +37,38 @@ const AllArticles = ({ blogs }) => {
           {recentBlogs.map((blog) => (
             <div className='recent-blogs'>
               <div class='recent-meta'>
-                <div
-                  class='recent-photo'
-                  style={{
-                    backgroundImage: '../../assets/images/img-1.jpg'
-                  }}
-                ></div>
-                <ul class='recent-details'>
-                  <li class='recent-author'>
-                    <a href='#'>John Doe</a>
-                  </li>
-                  <li class='recent-date'>Aug. 24, 2015</li>
-                  <li class='recent-tags'>
+                <img class='recent-photo' src={bgimg} alt='bg-img' />
+                <div class='recent-details'>
+                  <div class='recent-author'>
+                    <FontAwesomeIcon icon={faUser} />
+                    <button className='text-button no-decoration'>
+                      John Doe
+                    </button>
+                  </div>
+                  <div class='recent-date'>
+                    <FontAwesomeIcon icon={faCalendar} />{' '}
+                    <span>Sep. 25, 2020</span>
+                  </div>
+                  <div class='recent-tags'>
+                    <FontAwesomeIcon icon={faTag} />
                     <ul>
-                      <li>
-                        <a href='#'>Learn</a>
-                      </li>
-                      <li>
-                        <a href='#'>Code</a>
-                      </li>
-                      <li>
-                        <a href='#'>HTML</a>
-                      </li>
-                      <li>
-                        <a href='#'>CSS</a>
-                      </li>
+                      {blog.tags.map((tag) => (
+                        <li>
+                          <button className='text-button'>{tag}</button>
+                        </li>
+                      ))}
                     </ul>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
               <div class='recent-description'>
-                <h1>Learning to Code</h1>
-                <h2>Opening a door to the future</h2>
+                <h4>{blog.title}</h4>
+                <div className='divider'></div>
                 <p>
-                  {' '}
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
                   eum dolorum architecto obcaecati enim dicta praesentium, quam
                   nobis! Neque ad aliquam facilis numquam. Veritatis, sit.
+                  Something that brews again in this wilderness.
                 </p>
               </div>
             </div>
