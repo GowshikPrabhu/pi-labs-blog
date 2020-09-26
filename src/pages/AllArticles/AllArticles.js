@@ -33,21 +33,46 @@ const AllArticles = ({ blogs }) => {
         <div className='divider'></div>
         <div className='recent-article-body'>
           {recentBlogs.map((blog) => (
-            <div key={blog.id} className='recent-blogs'>
-              <div className='hbv-left'>
-                <img src={bgimg} alt='blog-image' />
+            <div className='recent-blogs'>
+              <div class='recent-meta'>
+                <div
+                  class='recent-photo'
+                  style={{
+                    backgroundImage: '../../assets/images/img-1.jpg'
+                  }}
+                ></div>
+                <ul class='recent-details'>
+                  <li class='recent-author'>
+                    <a href='#'>John Doe</a>
+                  </li>
+                  <li class='recent-date'>Aug. 24, 2015</li>
+                  <li class='recent-tags'>
+                    <ul>
+                      <li>
+                        <a href='#'>Learn</a>
+                      </li>
+                      <li>
+                        <a href='#'>Code</a>
+                      </li>
+                      <li>
+                        <a href='#'>HTML</a>
+                      </li>
+                      <li>
+                        <a href='#'>CSS</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-              <div className='hbv-right'>
-                <div className='card-tag-area'>
-                  {blog.tags.map((tag) => (
-                    <div className='card-tag'>{tag}</div>
-                  ))}
-                </div>
-                <div className='hbv-title'>{blog.title}</div>
-                <div className='hbv-desc'>
-                  {blog.title}
-                  {blog.title}
-                </div>
+              <div class='recent-description'>
+                <h1>Learning to Code</h1>
+                <h2>Opening a door to the future</h2>
+                <p>
+                  {' '}
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                  eum dolorum architecto obcaecati enim dicta praesentium, quam
+                  nobis! Neque ad aliquam facilis numquam. Veritatis, sit.
+                </p>
               </div>
             </div>
           ))}
