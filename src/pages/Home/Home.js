@@ -5,6 +5,7 @@ import Searchbar from './components/Searchbar/Searchbar';
 import Filter from './components/Filter/Filter';
 import Articles from '../Articles/Articles';
 import AllArticles from '../AllArticles/AllArticles';
+import ReadBlog from '../ReadBlog/ReadBlog';
 import './Home.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faFilter } from '@fortawesome/free-solid-svg-icons';
@@ -38,6 +39,7 @@ const Home = () => {
   const [searchValue, setSearchValue] = useState('');
   const [tags, setTags] = useState([]);
   const [showModal, setShowModal] = useState('m-modal-hide');
+  const [readMode, setReadMode] = useState(true);
 
   const handleSearchSubmit = () => {
     if (searchValue.length !== 0) {
@@ -86,38 +88,44 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <div className='home-layout'>
-        {/* <div className='m-modal-toggle'>
+      {readMode ? (
+        <ReadBlog />
+      ) : (
+        <div>
+          <div className='home-layout'>
+            {/* <div className='m-modal-toggle'>
           <FontAwesomeIcon
             icon={faFilter}
             className='filter-modal-button'
             onClick={toggleModal}
           />
         </div> */}
-        <div className='layout-container'>
-          {/* Blog cards */}
-          <Articles blogs={blogs} onSelect={() => {}} />
-        </div>
-        <div className={`layout-container toolbar m-modal ${showModal}`}>
-          <div className='m-modal-container'>
-            <button className='m-modal-close' onClick={toggleModal}>
-              Close
-            </button>
-            <Searchbar
-              value={searchValue}
-              onSearchChange={handleSearch}
-              onSearchSubmit={handleSearchSubmit}
-            />
-            <Filter
-              tags={tags}
-              onSelect={handleTagSelection}
-              clearSelection={clearSelection}
-              filterSelection={filterResults}
-            />
+            <div className='layout-container'>
+              {/* Blog cards */}
+              <Articles blogs={blogs} onSelect={() => {}} />
+            </div>
+            <div className={`layout-container toolbar m-modal ${showModal}`}>
+              <div className='m-modal-container'>
+                <button className='m-modal-close' onClick={toggleModal}>
+                  Close
+                </button>
+                <Searchbar
+                  value={searchValue}
+                  onSearchChange={handleSearch}
+                  onSearchSubmit={handleSearchSubmit}
+                />
+                <Filter
+                  tags={tags}
+                  onSelect={handleTagSelection}
+                  clearSelection={clearSelection}
+                  filterSelection={filterResults}
+                />
+              </div>
+            </div>
           </div>
+          <AllArticles blogs={blogs} onSelect={() => {}} />
         </div>
-      </div>
-      <AllArticles blogs={blogs} onSelect={() => {}} />
+      )}
       <Footer />
     </div>
   );
