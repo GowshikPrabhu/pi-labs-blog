@@ -5,37 +5,20 @@ import * as bgimg from '../../assets/images/img-1.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faTag, faUser } from '@fortawesome/free-solid-svg-icons';
 
-const recentBlogs = [
-  {
-    id: 111,
-    title: 'Divide and conquer algorithms implementation with c++',
-    tags: ['Algorithm', 'D and C']
-  },
-  {
-    id: 222,
-    title: 'Divide and conquer algorithms implementation with c++',
-    tags: ['Algorithm', 'D and C']
-  },
-  {
-    id: 333,
-    title: 'Divide and conquer algorithms implementation with c++',
-    tags: ['Algorithm', 'D and C']
-  }
-];
-
 /**
  * Show all the recent articels
  * @param {Object[]} blogs Array of blogs
+ * @param {Function} onSelect Handle blog selection
  */
-const AllArticles = ({ blogs }) => {
+const AllArticles = ({ blogs, onSelect }) => {
   return (
     <div className='recent-articles'>
       <div className='article-container'>
         <div className='article-heading'>recent posts</div>
         <div className='divider'></div>
         <div className='recent-article-body'>
-          {recentBlogs.map((blog) => (
-            <div className='recent-blogs'>
+          {blogs.map((blog) => (
+            <div className='recent-blogs' onClick={() => onSelect(blog.id)}>
               <div class='recent-meta'>
                 <img class='recent-photo' src={bgimg} alt='bg-img' />
                 <div class='recent-details'>
@@ -81,7 +64,9 @@ const AllArticles = ({ blogs }) => {
 
 AllArticles.propTypes = {
   /** Array of blog objects */
-  blogs: PropTypes.array
+  blogs: PropTypes.array,
+  /** Handle blog onClick */
+  onSelect: PropTypes.func
 };
 
 export default AllArticles;

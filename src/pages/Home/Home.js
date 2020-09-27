@@ -9,6 +9,24 @@ import './Home.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
+const blogs = [
+  {
+    id: 111,
+    title: 'Divide and conquer algorithms implementaion with c++',
+    tags: ['Algorithm', 'D and C']
+  },
+  {
+    id: 222,
+    title: 'Divide and conquer algorithms implementaion with c++',
+    tags: ['Algorithm', 'D and C']
+  },
+  {
+    id: 333,
+    title: 'Divide and conquer algorithms implementaion with c++',
+    tags: ['Algorithm', 'D and C']
+  }
+];
+
 const data = [
   { id: 1, value: 'Algorithm', isChecked: false },
   { id: 2, value: 'React', isChecked: false },
@@ -78,7 +96,7 @@ const Home = () => {
         </div> */}
         <div className='layout-container'>
           {/* Blog cards */}
-          <Articles />
+          <Articles blogs={blogs} onSelect={() => {}} />
         </div>
         <div className={`layout-container toolbar m-modal ${showModal}`}>
           <div className='m-modal-container'>
@@ -99,7 +117,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <AllArticles />
+      <AllArticles blogs={blogs} onSelect={() => {}} />
       <Footer />
     </div>
   );

@@ -1,37 +1,25 @@
 import React from 'react';
 import './Articles.css';
 import FullImageCard from './components/FullImageCard/FullImageCard';
+import PropTypes from 'prop-types';
 
-const featuredBlogs = [
-  {
-    id: 111,
-    title: 'Divide and conquer algorithms implementaion with c++',
-    tags: ['Algorithm', 'D and C']
-  },
-  {
-    id: 222,
-    title: 'Divide and conquer algorithms implementaion with c++',
-    tags: ['Algorithm', 'D and C']
-  },
-  {
-    id: 333,
-    title: 'Divide and conquer algorithms implementaion with c++',
-    tags: ['Algorithm', 'D and C']
-  }
-];
-
-const Articles = () => {
+/**
+ * Show featured and popular posts
+ * @param {Object[]} blogs Array of blog objects
+ * @param {Function} onSelect Handle blog selection
+ */
+const Articles = ({ blogs, onSelect }) => {
   return (
     <div>
       <div className='article-container'>
         <div className='article-heading'>featured posts</div>
         <div className='divider'></div>
         <div className='article-body'>
-          {featuredBlogs.map((blog) => (
+          {blogs.map((blog) => (
             <FullImageCard
               id={blog.id}
               key={blog.id}
-              onCardPress={() => {}}
+              onCardPress={onSelect}
               blog={blog}
             />
           ))}
@@ -42,7 +30,7 @@ const Articles = () => {
         <div className='article-heading'>popular posts</div>
         <div className='divider'></div>
         <div className='article-body'>
-          {featuredBlogs.map((blog) => (
+          {blogs.map((blog) => (
             <FullImageCard
               id={blog.id}
               key={blog.id}
@@ -54,6 +42,13 @@ const Articles = () => {
       </div>
     </div>
   );
+};
+
+Articles.propTypes = {
+  /** Array of blog objects */
+  blogs: PropTypes.array,
+  /** Handle blog onClick */
+  onSelect: PropTypes.func
 };
 
 export default Articles;
