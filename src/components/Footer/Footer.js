@@ -6,29 +6,18 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
-    <div className='footer'>
-      <div>
-        <ul>
-          <li>About us</li>
-          <li>Services</li>
-          <li>Get in touch</li>
-        </ul>
+    <footer>
+      <p className='footer-bname'>plus infinity labs</p>
+      <div className='footer-right-col'>
+        <div className='footer-right-icons'>
+          <FontAwesomeIcon icon={faTwitter} className='footer-icon' />
+          <FontAwesomeIcon icon={faYoutube} className='footer-icon' />
+        </div>
+        <div className='footer-right-links'>
+          <span>Home</span>•<span>Blogs</span>•<span>About</span>
+        </div>
       </div>
-      <div>
-        <ul>
-          <li>
-            <FontAwesomeIcon icon={faGlobe} className='footer-icons' />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faTwitter} className='footer-icons' />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faYoutube} className='footer-icons' />
-          </li>
-        </ul>
-      </div>
-      <div className='footer-name'>Plus Infinity Labs</div>
-    </div>
+    </footer>
   );
 };
 
