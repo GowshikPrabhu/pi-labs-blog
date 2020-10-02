@@ -1,5 +1,10 @@
 nav {
   background-color: #090a0b;
+  background-image: radial-gradient(
+    circle at bottom,
+    #ffffff1f 0%,
+    #090a0b 60%
+  );
   position: sticky;
   top: 0;
   left: 0;
