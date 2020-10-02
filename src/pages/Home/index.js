@@ -1,9 +1,10 @@
 import React from 'react';
+import StartSection from './components/StartSection/StartSection';
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <StartSection />
     </div>
   );
 };
