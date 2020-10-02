@@ -5,7 +5,7 @@ import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [navMenu, setNavMenu] = React.useState('topnav');
+  const [navMenu, setNavMenu] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const [theme, setTheme] = useState('light');
 
@@ -19,19 +19,26 @@ const Header = () => {
   const onChangeSearch = (e) => setSearchValue(e.target.value);
 
   const toggleTheme = () => {
-    if (theme == 'light') {
+    if (theme === 'light') {
       setTheme('dark');
-    } else if (theme == 'dark') {
+    } else if (theme === 'dark') {
       setTheme('light');
     }
   };
 
   return (
     <nav>
-      <div className='nav-inner'>
+      <div className={`nav-inner ${navMenu}`}>
         <div className='nav-left'>
-          <img src='/logo512.png' alt='logo' />
-          <p>plus infinity labs</p>
+          <div className='nav-img'>
+            <img src='/logo512.png' alt='logo' />
+            <p>plus infinity labs</p>
+          </div>
+          <FontAwesomeIcon
+            icon={faBars}
+            className='toggle-bar'
+            onClick={toggleMenu}
+          />
           <ul>
             <li>
               <Link to='/' className='nav-link'>
@@ -62,7 +69,7 @@ const Header = () => {
               onSubmit={() => console.log(searchValue)}
             />
           </div>
-          {theme == 'light' ? (
+          {theme === 'light' ? (
             <FontAwesomeIcon
               icon={faMoon}
               className='nav-theme-toggle'

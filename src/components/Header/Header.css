@@ -1,6 +1,6 @@
 nav {
   background-color: #090a0b;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -14,6 +14,11 @@ nav .nav-inner {
   align-items: center;
 }
 nav .nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+nav .nav-left .nav-img {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -56,6 +61,9 @@ nav .nav-left img {
   border-color: #ffffff9a;
   background-color: transparent;
   color: #ffffffc7;
+}
+.toggle-bar {
+  display: none;
 }
 
 /* Right */
@@ -106,4 +114,62 @@ nav .nav-left img {
 }
 .nav-right .nav-theme-toggle:active {
   background-color: #1c1e20;
+}
+
+@media only screen and (max-width: 768px) {
+  nav .nav-inner {
+    margin: 0 10px;
+  }
+  .nav-left {
+    position: relative;
+    padding: 5px 0;
+    width: 100%;
+  }
+  .nav-left p {
+    font-size: 1.1rem;
+  }
+  nav .nav-left img {
+    width: 100px;
+    height: 50px;
+  }
+  .nav-left ul {
+    display: none;
+  }
+  .nav-right {
+    display: none;
+  }
+  .toggle-bar {
+    display: inline;
+    color: #fffffff5;
+    position: absolute;
+    right: 5px;
+    font-size: 1.3rem;
+  }
+  .toggle-bar:hover {
+    background-color: #0e1011;
+  }
+  .toggle-bar:active {
+    background-color: #1c1e20;
+  }
+  .toggled .nav-left ul {
+    display: block;
+    padding-top: 15px;
+  }
+  .toggled .nav-left {
+    flex-direction: column;
+  }
+  .toggled .toggle-bar {
+    top: 25%;
+  }
+  .toggled .nav-right {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+  }
+  nav .toggled.nav-inner {
+    flex-direction: column;
+  }
+  .toggled .nav-right .search-input {
+    width: 70vw;
+  }
 }
