@@ -5,8 +5,10 @@
   width: 320px;
   min-height: 220px;
   margin-bottom: 30px;
+  margin-top: 30px;
   position: relative;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .blog-card .blog-card-img {
   width: 100%;
@@ -89,12 +91,15 @@
   width: 1040px;
   min-height: 280px;
   margin-bottom: 30px;
+  padding-top: 20px;
   position: relative;
   cursor: pointer;
 }
 .blog-card.horizontal .blog-card-img {
   width: 180%;
   height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
 }
 .horizontal .blog-card-details {
   display: flex;

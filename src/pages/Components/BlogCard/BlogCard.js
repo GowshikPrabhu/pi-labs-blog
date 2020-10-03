@@ -2,16 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './BlogCard.css';
 import img1 from '../../../assets/images/img-1.jpg';
+import img2 from '../../../assets/images/img-2.jpg';
+import img3 from '../../../assets/images/img-3.jpg';
+import img4 from '../../../assets/images/img-4.jpg';
+import img5 from '../../../assets/images/img-5.jpg';
+import img6 from '../../../assets/images/img-6.jpg';
+import img7 from '../../../assets/images/img-7.jpg';
 
 /**
  * Blog card to display posts
  * @param {String} viewMode Horizontal or vertical view
  */
-const BlogCard = ({ viewMode }) => {
+let images = {
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7
+};
+const BlogCard = ({ viewMode, id }) => {
   return (
     <div className={`blog-card ${viewMode}`}>
       <div className='blog-card-img'>
-        <img src={img1} alt='img1' />
+        <img src={images[`img${id}`]} alt='img1' />
       </div>
       <div className='blog-card-details'>
         <div className='tag-area-card'>
