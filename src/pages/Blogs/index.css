@@ -1,0 +1,21 @@
+.next-page-button {
+  text-align: end;
+  margin: 15px 0;
+}
+.text-button {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  color: #19a1fc;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.text-button-icon {
+  margin-left: 5px;
+}
+.text-button:active {
+  background-color: #f1f1f1;
+}
+.text-button::-moz-focus-inner {
+  border: 0;
+}
