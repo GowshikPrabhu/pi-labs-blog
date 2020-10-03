@@ -9,7 +9,7 @@ import img1 from '../../../assets/images/img-1.jpg';
  */
 const BlogCard = ({ viewMode }) => {
   return (
-    <div className='blog-card'>
+    <div className={`blog-card ${viewMode}`}>
       <div className='blog-card-img'>
         <img src={img1} alt='img1' />
       </div>
