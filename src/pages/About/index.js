@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import AboutDetails from './components/AboutDetails';
+import AboutDetails from './components/AboutDetails/AboutDetails';
 
 const data = [
   {
