@@ -1,0 +1,12 @@
+.content-title {
+  font-size: 1.6rem;
+  color: #343638;
+  font-weight: 700;
+  margin: 30px 0 0 0;
+  text-align: center;
+}
+.content-description {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #545557;
+}
