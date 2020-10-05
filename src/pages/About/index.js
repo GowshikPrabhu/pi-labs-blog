@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.css';
 import AboutDetails from './components/AboutDetails/AboutDetails';
+import TeamDetails from './components/TeamDetails/TeamDetails';
 
 const data = [
   {
     title: 'Who we are?',
     description:
-      'Hello and welcome to Plus Infinity Labs. We are team based in Indid. We do freelance application developing and content writing.'
+      'Hello and welcome to Plus Infinity Labs. We are team based in India. We do freelance application development, competitive programming and content writing.'
   },
   {
     title: 'Our goal',
@@ -21,6 +22,7 @@ const About = () => {
       {data.map(({ title, description }) => (
         <AboutDetails title={title} description={description} />
       ))}
+      <TeamDetails />
     </div>
   );
 };

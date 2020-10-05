@@ -1,0 +1,24 @@
+.team-details {
+  margin-top: 50px;
+}
+.team-pics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.avatar-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.avatar-area img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.avatar-area p {
+  font-size: 1.1rem;
+  color: #545557;
+  font-weight: 400;
+}
