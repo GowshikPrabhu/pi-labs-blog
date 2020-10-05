@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import AboutDetails from './components/AboutDetails/AboutDetails';
 import TeamDetails from './components/TeamDetails/TeamDetails';
+import ContactUs from './components/ContactUs/ContactUs';
 
 const data = [
   {
@@ -23,6 +24,7 @@ const About = () => {
         <AboutDetails title={title} description={description} />
       ))}
       <TeamDetails />
+      <ContactUs />
     </div>
   );
 };
