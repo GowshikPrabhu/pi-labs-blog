@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Blogs from './pages/Blogs';
 import About from './pages/About';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ReadBlog from './pages/ReadBlog/ReadBlog';
 
 const App = () => {
   return (
@@ -14,13 +15,16 @@ const App = () => {
         <Header />
 
         <Switch>
-          <Route path='/about'>
+          <Route path='/blog/:id' exact>
+            <ReadBlog />
+          </Route>
+          <Route path='/about' exact>
             <About />
           </Route>
-          <Route path='/blogs'>
+          <Route path='/blogs' exact>
             <Blogs />
           </Route>
-          <Route path='/'>
+          <Route path='/' exact>
             <Home />
           </Route>
         </Switch>
