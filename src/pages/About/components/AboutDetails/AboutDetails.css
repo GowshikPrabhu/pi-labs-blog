@@ -10,3 +10,12 @@
   text-align: center;
   color: #545557;
 }
+
+@media only screen and (max-width: 768px) {
+  .content-title {
+    font-size: 1.5rem;
+  }
+  .content-description {
+    font-size: 1rem;
+  }
+}
