@@ -4,7 +4,7 @@ import './ContactUs.css';
 const ContactUs = () => {
   return (
     <div className='contactus'>
-      <p className='content-title'>Get in touch</p>
+      <p className='content-title'>Get In Touch</p>
       <div className='contact-body'>
         <div className='contact-body-item left'>
           <div className='contact-title'>

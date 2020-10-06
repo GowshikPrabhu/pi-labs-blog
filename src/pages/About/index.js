@@ -11,7 +11,7 @@ const data = [
       'Hello and welcome to Plus Infinity Labs. We are team based in India. We do freelance application development, competitive programming and content writing.'
   },
   {
-    title: 'Our goal',
+    title: 'Our Goal',
     description:
       'We like to share our knowledge and experience with others. Our goal is to share how simple and fun programming is.'
   }
