@@ -4,6 +4,7 @@ import './ContactUs.css';
 const ContactUs = () => {
   return (
     <div className='contactus'>
+      <p className='content-title'>Get in touch</p>
       <div className='contact-body'>
         <div className='contact-body-item left'>
           <div className='contact-title'>
@@ -11,7 +12,7 @@ const ContactUs = () => {
             <span>US</span>
           </div>
           <div className='contact-contact'>
-            CONTACT INFO : +62 81 314 928 595
+            CONTACT INFO : contact@plusinfinitylabs.com
           </div>
         </div>
         <div className='contact-body-item'>
