@@ -2,3 +2,14 @@
   text-align: center;
   height: 85vh;
 }
+.read-blog-area {
+  margin: 30px 8% 0 25%;
+  display: flex;
+  flex-direction: row;
+}
+.read-blog-content {
+  flex: 7;
+}
+.table-of-content {
+  flex: 3;
+}

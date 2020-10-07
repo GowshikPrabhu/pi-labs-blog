@@ -10,6 +10,10 @@ const ReadBlog = () => {
       <div className='start-img'>
         <img src={img1} alt='start img' width='80%' height='100%' />
       </div>
+      <div className='read-blog-area'>
+        <div className='read-blog-content'>Hello</div>
+        <div className='table-of-content'>hello</div>
+      </div>
     </div>
   );
 };
