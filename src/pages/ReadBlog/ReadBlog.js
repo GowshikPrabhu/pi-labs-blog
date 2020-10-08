@@ -5,6 +5,7 @@ import img1 from '../../assets/images/img-1.jpg';
 import Markdown from 'markdown-to-jsx';
 import * as example from '../../example.md';
 import { InlineCode, BlockCode } from './components/CodeRenderer/CodeRenderer';
+import ImageRenderer from './components/ImageRenderer/ImageRenderer';
 
 const ReadBlog = () => {
   const [blog, setBlog] = useState('');
@@ -28,7 +29,11 @@ const ReadBlog = () => {
           <Markdown
             children={blog}
             options={{
-              overrides: { InlineCode: InlineCode, BlockCode: BlockCode }
+              overrides: {
+                InlineCode: InlineCode,
+                BlockCode: BlockCode,
+                img: ImageRenderer
+              }
             }}
           />
         </div>
