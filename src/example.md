@@ -48,21 +48,45 @@ The paragraph starts here...
 
 - Nulla facilisi. Mauris eleifend felis a purus pretium egestas
 
-```python
-name = 'Scott'
+<BlockCode
+language='python'
+code={`name = 'Scott'
 print 'Hi my name is ' + name
 def fibonacci(number):
-        if number <= 1:
-            return number
-        else:
-            return fibonacci(number - 1) + fibonacci(number - 2)
+    if number <= 1:
+      return number
+    else:
+      return
+    fibonacci(number - 1) + fibonacci(number - 2)
+
 fib_number = fibonacci(8)
-print 'The 8th Fibonacci number is:', fib_number
-```
+print 'The 8th Fibonacci number is:', fib_number`}
+/>
 
 ---
 
 ---
+
+<BlockCode
+language='jsx'
+code={`import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import \* as serviceWorker from './serviceWorker';
+
+ReactDOM.render(
+<React.StrictMode>
+<App />
+</React.StrictMode>,
+document.getElementById('root')
+);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();`}
+/>
 
 [Stack Abuse](http://stackabuse.com)
 
@@ -74,7 +98,7 @@ _This is emphasized text!_
 
 **This is strong text!**
 
-In JavaScript, use `console.log()` to print to the console.
+In JavaScript, use <InlineCode language='jsx'>`console.log('Hello world')`</InlineCode> to print to the console.
 
 ![My Alt Text](./src/assets/images/img-3.jpg 'My Optional Title Text')
 
