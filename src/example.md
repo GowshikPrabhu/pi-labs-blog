@@ -100,7 +100,7 @@ _This is emphasized text!_
 
 In JavaScript, use <InlineCode language='jsx'>`console.log('Hello world')`</InlineCode> to print to the console.
 
-![My Alt Text](./src/assets/images/img-3.jpg 'My Optional Title Text')
+![My Alt Text](https://images.unsplash.com/photo-1600498694096-ee239a7f0494?ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80 'My Optional Title Text')
 
 OMG \_this\_ had better not have emphasis...
 
