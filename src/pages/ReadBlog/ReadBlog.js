@@ -6,6 +6,7 @@ import Markdown from 'markdown-to-jsx';
 import * as example from '../../example.md';
 import { InlineCode, BlockCode } from './components/CodeRenderer/CodeRenderer';
 import ImageRenderer from './components/ImageRenderer/ImageRenderer';
+import BlockQuote from './components/BlockQuote/BlockQuote';
 
 const ReadBlog = () => {
   const [blog, setBlog] = useState('');
@@ -32,7 +33,8 @@ const ReadBlog = () => {
               overrides: {
                 InlineCode: InlineCode,
                 BlockCode: BlockCode,
-                img: ImageRenderer
+                img: ImageRenderer,
+                blockquote: BlockQuote
               }
             }}
           />
