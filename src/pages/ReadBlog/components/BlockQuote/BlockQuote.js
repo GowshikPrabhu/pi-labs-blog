@@ -2,7 +2,6 @@ import React from 'react';
 
 /** Component to show blockquote */
 const BlockQuote = (props) => {
-  console.log(props);
   return (
     <div
       style={{
