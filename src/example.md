@@ -1,71 +1,49 @@
-Hello, this is a paragraph.
+# Basics of Markdown
+Markdown is the most popular markup language that can be used to format documents. It can be used to create *websites*,*ebooks*,*email*,*chats in discussions forums*.
 
-OMG, this is a new paragraph, you guys.
+## Topics
+1. Paragraphs 
 
-The paragraph starts here...
-...and doesn't end until here.
+    MD expects a full line space to show texts in a different line else it joins text in the same line.
+2.  Text decorations
 
-# An H1 Header
+    MD can write **bold** texts, ~~italiic~~ *italic*  texts
+3. Headings
+    No of #'s represent the type of heading. Github will automatically add id's to headings, so the text will be automatically linked. 
+    ## This is h2
+    ### This is h3
+4. Links
 
-## An H2 Header
+   [My Github](https://github.com/bhupendra1011 "all repos") account.[Bhupendra][1] github repo.
 
-### An H3 Header
+5. Images
+    Images can be used just like links. ![Alt txt](img url)
 
-#### An H4 Header
+    !["cat Img"](http://placekitten.com/200/200)
 
-> Of all the things I've lost
-> I miss my mind the most. - Mark Twain
+    Thumbnails images can also be used which links to larger image 
+    [<img src="http://placekitten.com/20/20">](http://placekitten.com/200/200)
 
-> Measuring programming progress by lines of code is like measuring aircraft building progress by weight. — Bill Gates
+6. Ordered and Unordered Lists
 
-- Item 1
-- Item 2
-- Item 3
+    Coding Best Practices:
 
-* Item 1
-* Item 2
-* Item 3
+    * Keep code DRY
+    * Writing Unit Test cases
+    * Checking cross-browser support
 
-- Item 1
-- Item 2
-- Item 3
+    Steps to merge branch:
 
-- Item 1
-  - Sub-item 1
-  - Sub-item 2
-- Item 2
-  - Sub-item 1
+    1. Create a branch from feature
+    1. commit your changes
+    1. push your changes
+    1. raise a pull request
 
-1. Item 1
-2. Item 2
-3. Item 3
+7. Code Blocks
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla velit sit amet lectus tincidunt, quis suscipit tortor maximus. Vestibulum facilisis sit amet tortor sed vestibulum.
+    This is super helpful when posting any code snippet
 
-  Sed nec egestas leo. Nam tristique tincidunt venenatis. Vestibulum vel justo tincidunt, aliquet sapien vitae, vestibulum ex.
 
-  Donec commodo, nunc in posuere condimentum, diam est gravida ex, quis varius nisi neque et nunc.
-
-- Nulla facilisi. Mauris eleifend felis a purus pretium egestas
-
-<BlockCode
-language='python'
-code={`name = 'Scott'
-print 'Hi my name is ' + name
-def fibonacci(number):
-    if number <= 1:
-      return number
-    else:
-      return
-    fibonacci(number - 1) + fibonacci(number - 2)
-
-fib_number = fibonacci(8)
-print 'The 8th Fibonacci number is:', fib_number`}
-/>
-
----
-
----
 
 <BlockCode
 language='jsx'
@@ -74,7 +52,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import \* as serviceWorker from './serviceWorker';
-
+const fn = () =escrarr<> alert('some fn');
 ReactDOM.render(
 <React.StrictMode>
 <App />
@@ -88,27 +66,41 @@ document.getElementById('root')
 serviceWorker.unregister();`}
 />
 
-[Stack Abuse](http://stackabuse.com)
 
-_This is emphasized text!_
 
-**This is strong text!**
+<BlockCode 
+  language='css' 
+  code={`.hide {
+    display: none;
+  }`}
+/>
 
-_This is emphasized text!_
 
-**This is strong text!**
+    Also can show code difference
 
-In JavaScript, use <InlineCode language='jsx'>`console.log('Hello world')`</InlineCode> to print to the console.
 
-![My Alt Text](https://images.unsplash.com/photo-1600498694096-ee239a7f0494?ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80 'My Optional Title Text')
+    ```diff
+    var x = 10;
+    - const counter = 0;
+    + let counter = 0
+    ```
 
-OMG \_this\_ had better not have emphasis...
 
-<http://stackabuse.com>
 
-<address@example.com>
+8. Tables 
 
-| Column 1      |   Column 2   |  Column 3 |
-| :------------ | :----------: | --------: |
-| Cell Contents |  More Stuff  | And Again |
-| You Can Also  | Put Pipes In | Like this |
+    Tables can be generated with headings and text alignment option
+
+    |Stocks|Price|
+    |:-----:|------:|
+    |TCS|230|
+    |YES Bank|500|
+
+
+
+Cool Tips 
+
+ * [Grammarly](https://marketplace.visualstudio.com/items?itemName=znck.grammarly) extension can eliminate typo and grammar mistakes
+ * [ScreenTOGif](https://www.screentogif.com/) to record videos in GIF format
+ * Upload GIF's to [giphy](https://giphy.com/) to embed them into blog posts.
+ * [Stackedit](https://stackedit.io/) for Markdown Editing in Browser.
