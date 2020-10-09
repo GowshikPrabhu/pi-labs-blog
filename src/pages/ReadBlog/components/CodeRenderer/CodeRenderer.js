@@ -41,12 +41,14 @@ InlineCode.defaultProps = {
  */
 export const BlockCode = (props) => {
   const [code, setCode] = useState(``);
+  console.log(props);
   useState(() => {
     let c = props.code.substring(2, props.code.length - 2);
+    c = c.replace('escrarr<', '');
     setCode(c);
   });
   return (
-    <div>
+    <div style={{ margin: '10px auto' }}>
       <CopyBlock
         text={code}
         language={props.language}
