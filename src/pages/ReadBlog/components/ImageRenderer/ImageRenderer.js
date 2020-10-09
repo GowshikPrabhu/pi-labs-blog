@@ -4,7 +4,15 @@ import PropTypes from 'prop-types';
 /** Custom render the image */
 const ImageRenderer = ({ alt, src, width, height }) => {
   return (
-    <div style={{ width: width, height: height, margin: '0 auto' }}>
+    <div
+      style={{
+        width: width,
+        height: height,
+        margin: '0 auto',
+        maxHeight: '20%',
+        maxWidth: '70%'
+      }}
+    >
       <img src={src} alt={alt} width={'100%'} height={'100%'} />
     </div>
   );
@@ -18,8 +26,8 @@ ImageRenderer.propTypes = {
 };
 
 ImageRenderer.defaultProps = {
-  width: '70%',
-  height: '20%'
+  width: 'auto',
+  height: 'auto'
 };
 
 export default ImageRenderer;
