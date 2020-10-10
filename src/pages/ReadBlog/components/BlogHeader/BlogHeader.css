@@ -49,3 +49,17 @@
   color: #595959;
   margin: 0;
 }
+
+@media only screen and (max-width: 768px) {
+  .blog-header {
+    margin: 25px 5% 30px 5%;
+  }
+  .blog-header .blog-header-title {
+    line-height: 2rem;
+    font-size: 2rem;
+  }
+  .blog-header .blog-header-description {
+    font-size: 1.17rem;
+    line-height: 1.2rem;
+  }
+}
