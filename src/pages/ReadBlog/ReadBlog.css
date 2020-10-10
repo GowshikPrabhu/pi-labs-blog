@@ -44,3 +44,12 @@ table td {
   text-transform: uppercase;
   font-size: 12px;
 }
+
+@media only screen and (max-width: 768px) {
+  .read-blog .start-img {
+    height: 50vh;
+  }
+  .read-blog .start-img img {
+    width: 100%;
+  }
+}
