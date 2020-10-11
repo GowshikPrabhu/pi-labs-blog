@@ -66,4 +66,8 @@ table td {
   .read-blog .read-blog-content {
     font-size: 1rem;
   }
+  .read-blog table {
+    display: block;
+    overflow: auto;
+  }
 }
