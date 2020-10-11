@@ -52,4 +52,18 @@ table td {
   .read-blog .start-img img {
     width: 100%;
   }
+  .read-blog-area {
+    margin: 30px 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  .read-blog-content {
+    order: 2;
+  }
+  .table-of-content {
+    order: 1;
+  }
+  .read-blog .read-blog-content {
+    font-size: 1rem;
+  }
 }
