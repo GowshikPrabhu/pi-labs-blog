@@ -34,10 +34,10 @@ Markdown is the most popular markup language that can be used to format document
 
     Steps to merge branch:
 
-    1. Create a branch from feature
-    1. commit your changes
-    1. push your changes
-    1. raise a pull request
+  1. Create a branch from feature
+  2. commit your changes
+  3. push your changes
+  4. raise a pull request
 
 7. Code Blocks
 
