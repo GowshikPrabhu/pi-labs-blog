@@ -6,7 +6,8 @@
   "description": "Server for plus infinity labs blog",
   "author": "Gowshik Prabhu",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
