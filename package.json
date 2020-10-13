@@ -1,0 +1,11 @@
+{
+  "name": "pi_labs_blog_server",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "description": "Server for plus infinity labs blog",
+  "author": "Gowshik Prabhu",
+  "scripts": {
+    "start": "node server"
+  }
+}
