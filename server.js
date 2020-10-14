@@ -1,9 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db');
 
 // Setup dotenv file for development
 dotenv.config({ path: './config/config.env' });
+
+connectDB();
 
 const app = express();
 
