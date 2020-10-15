@@ -26,6 +26,13 @@ const BlogSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true
+  },
+  slug: {
+    type: String
+  },
+  featured: {
+    type: Boolean,
+    default: false
   }
 });
 
