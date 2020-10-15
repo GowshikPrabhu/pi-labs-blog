@@ -17,8 +17,9 @@ const blogs = require('./routes/v1/blogs');
 const app = express();
 
 // Middleware
-app.use(express.json());
 const upload = multer({ storage: storage });
+
+app.use(express.json());
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('common'));

@@ -2,7 +2,7 @@ const multer = require('multer');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/');
+    cb(null, 'postfiles/');
   },
   filename: function (req, file, cb) {
     let d = new Date();
@@ -13,8 +13,6 @@ var storage = multer.diskStorage({
         d.getMonth() +
         '-' +
         d.getFullYear() +
-        '_' +
-        file.mimetype.split('/')[0] +
         '_' +
         file.originalname
     );
