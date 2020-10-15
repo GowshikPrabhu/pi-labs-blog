@@ -19,7 +19,9 @@ exports.getBlog = asyncHandler(async (req, res, next) => {
 });
 
 exports.getFeaturedBlogs = asyncHandler(async (req, res, next) => {
-  res.status(200).json({ success: true, data: {} });
+  const blogs = await Blog.find({ featured: true });
+
+  res.status(200).json({ success: true, data: blogs });
 });
 
 exports.createBlog = asyncHandler(async (req, res, next) => {
