@@ -40,6 +40,11 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
   res.status(201).json({ success: true, data: blog });
 });
 
+exports.getBlogContent = asyncHandler(async (req, res, next) => {
+  let fname = req.params.filename;
+  res.download(`./postfiles/${fname}`, 'content.md');
+});
+
 exports.editBlog = asyncHandler(async (req, res, next) => {
   const blogID = req.params.id;
 
