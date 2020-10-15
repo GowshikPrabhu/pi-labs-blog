@@ -7,7 +7,15 @@ exports.getBlogs = asyncHandler(async (req, res, next) => {
 });
 
 exports.getBlog = asyncHandler(async (req, res, next) => {
-  res.status(200).json({ success: true, data: {} });
+  const blogID = req.params.id;
+
+  const blog = await Blog.findById(blogID);
+
+  if (!blog) {
+    return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
+  }
+
+  res.status(200).json({ success: true, data: blog });
 });
 
 exports.getFeaturedBlogs = asyncHandler(async (req, res, next) => {
