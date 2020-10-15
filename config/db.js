@@ -12,7 +12,10 @@ const connectDB = async () => {
     useCreateIndex: true,
     useFindAndModify: false
   });
-  console.log('MongoDB connected HOST:', conn.connection.host);
+  console.log(
+    '\x1b[36m%s\x1b[0m',
+    `MongoDB connected HOST: ${conn.connection.host}`
+  );
 };
 
 module.exports = connectDB;

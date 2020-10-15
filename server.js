@@ -31,7 +31,10 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(PORT, () =>
-  console.log(`Server running MODE:${process.env.NODE_ENV} PORT:${PORT}`)
+  console.log(
+    '\x1b[44m%s\x1b[0m',
+    `Server running MODE:${process.env.NODE_ENV} PORT:${PORT}`
+  )
 );
 
 // Handle unhandled promise rejection
