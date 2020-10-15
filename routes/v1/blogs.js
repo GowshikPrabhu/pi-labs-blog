@@ -11,6 +11,6 @@ const {
 
 router.route('/').get(getBlogs).post(createBlog);
 router.route('/featured').get(getFeaturedBlogs);
-router.route('/blog/:id').get(getBlog).put(editBlog).delete(deleteBlog);
+router.route('/:id').get(getBlog).put(editBlog).delete(deleteBlog);
 
 module.exports = router;

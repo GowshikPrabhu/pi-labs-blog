@@ -2,24 +2,28 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const multer = require('multer');
+const storage = require('./utils/storage');
 
 // Setup dotenv file for development
 dotenv.config({ path: './config/config.env' });
 
 connectDB();
 
+// Routes
+const blogs = require('./routes/v1/blogs');
+
 const app = express();
 
 // Middleware
 app.use(express.json());
+const upload = multer({ storage: storage });
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('common'));
 }
-
-app.get('/', (req, res) => {
-  res.send('Hello world');
-});
+// setup routes
+app.use('/api/v1/blogs', upload.single('file'), blogs);
 
 const PORT = process.env.PORT || 5000;
 
