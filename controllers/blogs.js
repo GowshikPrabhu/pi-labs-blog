@@ -25,6 +25,16 @@ exports.getFeaturedBlogs = asyncHandler(async (req, res, next) => {
 });
 
 exports.createBlog = asyncHandler(async (req, res, next) => {
+  if (!req.file) {
+    return next(new ErrorResponse(`Please upload a file`, 400));
+  }
+  const file = req.file;
+  if (file.mimetype !== 'text/markdown') {
+    return next(new ErrorResponse('Please upload an markdown file', 400));
+  }
+
+  req.body.content = req.file.filename;
+
   const blog = await Blog.create(req.body);
 
   res.status(201).json({ success: true, data: blog });
