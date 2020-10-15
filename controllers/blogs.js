@@ -35,5 +35,14 @@ exports.editBlog = asyncHandler(async (req, res, next) => {
 });
 
 exports.deleteBlog = asyncHandler(async (req, res, next) => {
+  const blogID = req.params.id;
+
+  const blog = await Blog.findById(blogID);
+
+  if (!blog) {
+    return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
+  }
+
+  blog.remove();
   res.status(200).json({ success: true, data: {} });
 });
