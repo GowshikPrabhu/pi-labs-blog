@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const multer = require('multer');
 const storage = require('./utils/storage');
+const errorHandler = require('./middlewares/error');
 
 // Setup dotenv file for development
 dotenv.config({ path: './config/config.env' });
@@ -24,6 +25,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 // setup routes
 app.use('/api/v1/blogs', upload.single('file'), blogs);
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
