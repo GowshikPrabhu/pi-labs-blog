@@ -31,7 +31,20 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
 });
 
 exports.editBlog = asyncHandler(async (req, res, next) => {
-  res.status(200).json({ success: true, data: {} });
+  const blogID = req.params.id;
+
+  let blog = await Blog.findById(blogID);
+
+  if (!blog) {
+    return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
+  }
+
+  blog = await Blog.findByIdAndUpdate(blogID, req.body, {
+    new: true,
+    runValidators: true
+  });
+
+  res.status(200).json({ success: true, data: blog });
 });
 
 exports.deleteBlog = asyncHandler(async (req, res, next) => {
