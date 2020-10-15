@@ -24,8 +24,7 @@ const BlogSchema = new mongoose.Schema({
     required: true
   },
   content: {
-    type: String,
-    required: true
+    type: String
   },
   slug: {
     type: String
