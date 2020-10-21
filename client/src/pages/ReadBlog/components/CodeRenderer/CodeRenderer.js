@@ -44,7 +44,9 @@ export const BlockCode = (props) => {
   console.log(props);
   useState(() => {
     let c = props.code.substring(2, props.code.length - 2);
-    c = c.replace('escrarr<', '');
+    c = c.replaceAll('#escrarr<', '');
+    c = c.replaceAll('#escclcb', '}');
+    c = c.replaceAll('#esctick', '`');
     setCode(c);
   });
   return (
