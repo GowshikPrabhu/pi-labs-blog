@@ -6,7 +6,7 @@ const PreFormattedBox = ({ content }) => {
   useEffect(() => {
     let c = content.substring(2, content.length - 2);
     setBody(c);
-  });
+  }, [content]);
   return (
     <pre
       style={{
