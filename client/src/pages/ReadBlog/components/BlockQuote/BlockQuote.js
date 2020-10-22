@@ -5,12 +5,14 @@ const BlockQuote = (props) => {
   return (
     <div
       style={{
-        backgroundColor: '#f3f3f3',
-        padding: '10px',
-        borderRadius: '10px',
-        borderLeft: '10px solid #999999',
+        backgroundColor: '#F3F3F3',
+        padding: '20px 25px',
+        fontStyle: 'italic',
+        fontSize: '1.2rem',
+        lineHeight: '1.5rem',
+        borderLeft: '8px solid #00cccc',
         width: 'fit-content',
-        margin: '10px auto'
+        margin: '25px auto'
       }}
     >
       {props.children.map(({ props }) => (
