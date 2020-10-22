@@ -41,7 +41,6 @@ const ReadBlog = () => {
             }}
           />
         </div>
-        <div className='table-of-content'>hello</div>
       </div>
     </div>
   );
