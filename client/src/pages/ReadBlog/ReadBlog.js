@@ -7,6 +7,7 @@ import * as example from '../../example.md';
 import { InlineCode, BlockCode } from './components/CodeRenderer/CodeRenderer';
 import ImageRenderer from './components/ImageRenderer/ImageRenderer';
 import BlockQuote from './components/BlockQuote/BlockQuote';
+import PreFormattedBox from './components/PreFormattedBox/PreFormattedBox';
 
 const ReadBlog = () => {
   const [blog, setBlog] = useState('');
@@ -34,7 +35,8 @@ const ReadBlog = () => {
                 InlineCode: InlineCode,
                 BlockCode: BlockCode,
                 img: ImageRenderer,
-                blockquote: BlockQuote
+                blockquote: BlockQuote,
+                PreFormattedBox: PreFormattedBox
               }
             }}
           />
