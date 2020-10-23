@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import BlogHeader from './components/BlogHeader/BlogHeader';
 import './ReadBlog.css';
 import img1 from '../../assets/images/img-1.jpg';
@@ -8,10 +8,11 @@ import { InlineCode, BlockCode } from './components/CodeRenderer/CodeRenderer';
 import ImageRenderer from './components/ImageRenderer/ImageRenderer';
 import BlockQuote from './components/BlockQuote/BlockQuote';
 import PreFormattedBox from './components/PreFormattedBox/PreFormattedBox';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const ReadBlog = () => {
   const [blog, setBlog] = useState('');
-
+  const { themeMode } = useContext(ThemeContext);
   useEffect(() => {
     fetch(example)
       .then((response) => response.text())
@@ -21,7 +22,7 @@ const ReadBlog = () => {
   }, []);
 
   return (
-    <div className='read-blog'>
+    <div className={`read-blog ${themeMode}`}>
       <BlogHeader />
       <div className='start-img'>
         <img src={img1} alt='start img' width='80%' height='100%' />
