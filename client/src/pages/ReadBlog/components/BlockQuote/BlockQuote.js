@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../../../context/ThemeContext';
 
 /** Component to show blockquote */
 const BlockQuote = (props) => {
+  const { themeMode } = useContext(ThemeContext);
   return (
     <div
       style={{
-        backgroundColor: '#F3F3F3',
+        backgroundColor: themeMode === 'light' ? '#F3F3F3' : '#333333',
         padding: '20px 25px',
         fontStyle: 'italic',
         fontSize: '1.2rem',

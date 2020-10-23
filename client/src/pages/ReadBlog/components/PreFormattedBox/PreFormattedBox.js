@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeContext } from '../../../../context/ThemeContext';
 
 const PreFormattedBox = ({ content }) => {
   const [body, setBody] = useState('');
+  const { themeMode } = useContext(ThemeContext);
+
   useEffect(() => {
     let c = content.substring(2, content.length - 2);
     setBody(c);
@@ -10,9 +13,10 @@ const PreFormattedBox = ({ content }) => {
   return (
     <pre
       style={{
-        backgroundColor: '#F5F5F5',
+        backgroundColor: themeMode === 'light' ? '#F5F5F5' : '#101214',
         borderRadius: '4px',
-        border: '1px solid #d3dce6',
+        border:
+          themeMode === 'light' ? '1px solid #d3dce6' : '1px solid #08090a',
         padding: '16px'
       }}
     >

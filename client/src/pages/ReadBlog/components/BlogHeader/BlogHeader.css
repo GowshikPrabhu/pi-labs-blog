@@ -6,12 +6,18 @@
   border-bottom: 1px solid #dddddd;
   padding-bottom: 20px;
 }
+.blog-header.dark {
+  border-bottom-color: #333333;
+}
 .blog-header .blog-header-title {
   margin: 0;
   font-weight: 600;
   line-height: 3.3rem;
   font-size: 3rem;
   color: #0f0e0e;
+}
+.blog-header.dark .blog-header-title {
+  color: #f1f1f1;
 }
 .blog-header .blog-header-description {
   margin: 10px 0 0 0;
@@ -21,6 +27,9 @@
   line-height: 2rem;
   color: #595959;
   letter-spacing: 0.0008rem;
+}
+.blog-header.dark .blog-header-description {
+  color: #dcdcdc;
 }
 .blog-header .blog-header-info {
   display: flex;
@@ -40,6 +49,9 @@
   margin: 0;
   padding-bottom: 3px;
 }
+.blog-header.dark .blog-header-info .info-name-time p:first-child {
+  color: #f1f1f1;
+}
 .blog-header .blog-header-info .info-name-time p:first-child:hover {
   text-decoration: underline;
 }
@@ -49,7 +61,9 @@
   color: #595959;
   margin: 0;
 }
-
+.blog-header.dark .blog-header-info .info-name-time p:last-child {
+  color: #dcdcdc;
+}
 @media only screen and (max-width: 768px) {
   .blog-header {
     margin: 25px 5% 30px 5%;

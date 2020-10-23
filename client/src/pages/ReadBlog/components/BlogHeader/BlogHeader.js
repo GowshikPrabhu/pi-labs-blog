@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './BlogHeader.css';
+import { ThemeContext } from '../../../../context/ThemeContext';
 
 /**
  * Header for blog posts
@@ -9,8 +10,10 @@ import './BlogHeader.css';
  * @param {Object} info
  */
 const BlogHeader = ({ title, description, info }) => {
+  const { themeMode } = useContext(ThemeContext);
+
   return (
-    <div className='blog-header'>
+    <div className={`blog-header ${themeMode}`}>
       <p className='blog-header-title'>
         Lorem ipsum dolor sit amet, consectetur adipsicing elit.
       </p>
