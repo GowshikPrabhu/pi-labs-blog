@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './BlogCard.css';
+import { ThemeContext } from '../../../context/ThemeContext';
 import img1 from '../../../assets/images/img-1.jpg';
 import img2 from '../../../assets/images/img-2.jpg';
 import img3 from '../../../assets/images/img-3.jpg';
@@ -23,12 +24,13 @@ let images = {
   img7
 };
 const BlogCard = ({ viewMode, id }) => {
+  const { themeMode } = useContext(ThemeContext);
   return (
     <div className={`blog-card ${viewMode}`}>
       <div className='blog-card-img'>
         <img src={images[`img${id}`]} alt='img1' />
       </div>
-      <div className='blog-card-details'>
+      <div className={`blog-card-details ${themeMode}`}>
         <div className='tag-area-card'>
           {['Algorithm', 'React'].map((tag) => (
             <p>{tag}</p>
