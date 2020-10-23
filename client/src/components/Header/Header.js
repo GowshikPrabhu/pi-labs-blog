@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const Header = () => {
   const [navMenu, setNavMenu] = useState('');
   const [searchValue, setSearchValue] = useState('');
-  const [theme, setTheme] = useState('light');
+  const { themeMode, setThemeMode } = useContext(ThemeContext);
 
   const toggleMenu = () => {
     if (navMenu === '') {
@@ -19,10 +20,10 @@ const Header = () => {
   const onChangeSearch = (e) => setSearchValue(e.target.value);
 
   const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else if (theme === 'dark') {
-      setTheme('light');
+    if (themeMode === 'light') {
+      setThemeMode('dark');
+    } else if (themeMode === 'dark') {
+      setThemeMode('light');
     }
   };
 
@@ -69,7 +70,7 @@ const Header = () => {
               onSubmit={() => console.log(searchValue)}
             />
           </div>
-          {theme === 'light' ? (
+          {themeMode === 'light' ? (
             <FontAwesomeIcon
               icon={faMoon}
               className='nav-theme-toggle'
