@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ContactUs.css';
+import { ThemeContext } from '../../../../context/ThemeContext';
 
 const ContactUs = () => {
+  const { themeMode } = useContext(ThemeContext);
+
   return (
     <div className='contactus'>
-      <p className='content-title'>Get In Touch</p>
+      <p className={`content-title ${themeMode}`}>Get In Touch</p>
       <div className='contact-body'>
         <div className='contact-body-item left'>
           <div className='contact-title'>

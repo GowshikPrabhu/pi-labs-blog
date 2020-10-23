@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './AboutDetails.css';
+import { ThemeContext } from '../../../../context/ThemeContext';
 
 /**
  * About us page contents
@@ -8,10 +9,11 @@ import './AboutDetails.css';
  * @param {String} description Description of content
  */
 const AboutDetails = ({ title, description }) => {
+  const { themeMode } = useContext(ThemeContext);
   return (
     <div>
-      <p className='content-title'>{title}</p>
-      <p className='content-description'>{description}</p>
+      <p className={`content-title ${themeMode}`}>{title}</p>
+      <p className={`content-description ${themeMode}`}>{description}</p>
     </div>
   );
 };

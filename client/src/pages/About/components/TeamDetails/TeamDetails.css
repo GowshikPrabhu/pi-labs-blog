@@ -22,3 +22,6 @@
   color: #545557;
   font-weight: 400;
 }
+.avatar-area.dark p {
+  color: #dcdcdc;
+}

@@ -5,10 +5,16 @@
   margin: 30px 0 0 0;
   text-align: center;
 }
+.content-title.dark {
+  color: #fefefe;
+}
 .content-description {
   font-size: 1.2rem;
   text-align: center;
   color: #545557;
+}
+.content-description.dark {
+  color: #dcdcdc;
 }
 
 @media only screen and (max-width: 768px) {
