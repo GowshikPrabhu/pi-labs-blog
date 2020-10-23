@@ -8,7 +8,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 const Header = () => {
   const [navMenu, setNavMenu] = useState('');
   const [searchValue, setSearchValue] = useState('');
-  const { themeMode, setThemeMode } = useContext(ThemeContext);
+  const { themeMode, setTheme } = useContext(ThemeContext);
 
   const toggleMenu = () => {
     if (navMenu === '') {
@@ -21,9 +21,9 @@ const Header = () => {
 
   const toggleTheme = () => {
     if (themeMode === 'light') {
-      setThemeMode('dark');
+      setTheme('dark');
     } else if (themeMode === 'dark') {
-      setThemeMode('light');
+      setTheme('light');
     }
   };
 
