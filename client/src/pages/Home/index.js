@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './index.css';
 import StartSection from './components/StartSection/StartSection';
 import BlogCard from '../Components/BlogCard/BlogCard';
+import { ThemeContext } from '../../context/ThemeContext';
 
 /**
  * Home page
  * @description Home page with featured blogs
  */
 const Home = () => {
+  const { themeMode } = useContext(ThemeContext);
   return (
     <div>
       <StartSection />
-      <div className='main-section'>
+      <div className={`main-section ${themeMode}`}>
         <BlogCard viewMode='horizontal' id={1} />
         <div className='multi-cards set-1'>
           <BlogCard viewMode='vertical' id={2} />

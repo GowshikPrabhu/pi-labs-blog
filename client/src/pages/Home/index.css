@@ -7,10 +7,15 @@
   justify-content: space-between;
   border-bottom: 1px solid #bebebe;
 }
+.main-section.dark .multi-cards {
+  border-bottom-color: #333333;
+}
 .multi-cards.set-1 {
   border-top: 1px solid #bebebe;
 }
-
+.main-section.dark .multi-cards.set-1 {
+  border-top-color: #333333;
+}
 @media only screen and (max-width: 768px) {
   .multi-cards {
     display: block;

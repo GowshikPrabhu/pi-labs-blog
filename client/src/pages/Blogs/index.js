@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import BlogCard from '../Components/BlogCard/BlogCard';
 import './index.css';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const Blogs = () => {
+  const { themeMode } = useContext(ThemeContext);
   return (
-    <div className='main-section'>
+    <div className={`main-section ${themeMode}`}>
       <h1>Posts</h1>
       <div className='multi-cards'>
         <BlogCard viewMode='vertical' id={2} />
