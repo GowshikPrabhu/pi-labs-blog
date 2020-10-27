@@ -5,6 +5,7 @@ const connectDB = require('./config/db');
 const multer = require('multer');
 const storage = require('./utils/storage');
 const errorHandler = require('./middlewares/error');
+const passport = require('passport');
 
 // Setup dotenv file for development
 dotenv.config({ path: './config/config.env' });
@@ -19,6 +20,10 @@ const app = express();
 
 // Middleware
 const upload = multer({ storage: storage });
+
+require('./config/passport')(passport);
+
+app.use(passport.initialize());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
