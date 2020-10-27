@@ -18,6 +18,28 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res);
 });
 
+exports.loginUser = asyncHandler(async (req, res, next) => {
+  const { email, password } = req.body;
+
+  // Validate email and password
+  if (!email || !password) {
+    return next(new ErrorResponse('Please provide an email and password', 400));
+  }
+
+  const user = await User.findOne({ email: email });
+  // Check for user
+  if (!user) {
+    return next(new ErrorResponse('Invalid credentials', 401));
+  }
+  // Check if the password matches
+  const isValid = await user.verifyPassword(password);
+  if (!isValid) {
+    return next(new ErrorResponse('Invalid credentials', 401));
+  }
+
+  sendTokenResponse(user, 200, res);
+});
+
 const sendTokenResponse = (user, statusCode, res) => {
   const tokenObject = getSignedJwtToken(user);
   console.log(tokenObject);
