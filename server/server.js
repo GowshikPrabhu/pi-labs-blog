@@ -13,6 +13,7 @@ connectDB();
 
 // Routes
 const blogs = require('./routes/v1/blogs');
+const users = require('./routes/v1/users');
 
 const app = express();
 
@@ -27,6 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 // setup routes
 app.use('/api/v1/blogs', upload.single('file'), blogs);
+app.use('/api/v1/users', users);
 
 app.use(errorHandler);
 
