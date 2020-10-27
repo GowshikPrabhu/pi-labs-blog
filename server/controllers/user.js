@@ -6,6 +6,14 @@ const ErrorResponse = require('../utils/error');
 exports.registerUser = asyncHandler(async (req, res, next) => {
   const { name, email, password } = req.body;
 
+  const su_key = req.headers.su_key;
+
+  if (su_key !== process.env.SU_KEY) {
+    return next(
+      new ErrorResponse("Your don't have authorization for this action")
+    );
+  }
+
   const user = await User.create({ name, email, password });
   sendTokenResponse(user, 200, res);
 });
