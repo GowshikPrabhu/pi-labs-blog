@@ -55,5 +55,5 @@ const sendTokenResponse = (user, statusCode, res) => {
   //   options.secure = true;
   // }
 
-  res.status(statusCode).json({ success: true, date: tokenObject });
+  res.status(statusCode).json({ success: true, data: tokenObject });
 };
