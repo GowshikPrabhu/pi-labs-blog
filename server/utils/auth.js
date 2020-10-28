@@ -18,7 +18,7 @@ const getSignedJwtToken = (user) => {
   });
 
   return {
-    token: 'Bearer ' + token,
+    token: token,
     expires: '30d'
   };
 };

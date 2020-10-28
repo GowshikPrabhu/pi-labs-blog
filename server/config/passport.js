@@ -1,10 +1,15 @@
-const JwtStrategy = require('passport-jwt').JwtStrategy;
+const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const User = require('../models/User');
+const path = require('path');
+const fs = require('fs');
+
+const publicKeyPath = path.join(__dirname, './', 'jwtRS256.key.pub');
+const PUBLIC_KEY = fs.readFileSync(publicKeyPath, 'utf8');
 
 const options = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SIG_KEY_PUB,
+  secretOrKey: PUBLIC_KEY,
   algorithms: ['RS256'],
   ignoreExpiration: false,
   passReqToCallback: false,
@@ -17,7 +22,7 @@ const options = {
 module.exports = (passport) => {
   passport.use(
     new JwtStrategy(options, function (jwt_payload, done) {
-      User.findOne({ id: jwt_payload.sub }, function (err, user) {
+      User.findOne({ _id: jwt_payload.sub }, function (err, user) {
         if (err) {
           return done(err, false);
         }
