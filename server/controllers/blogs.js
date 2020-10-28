@@ -1,6 +1,8 @@
 const Blog = require('../models/Blog');
 const asyncHandler = require('../middlewares/async');
 const ErrorResponse = require('../utils/error');
+const fs = require('fs');
+const path = require('path');
 
 exports.getBlogs = asyncHandler(async (req, res, next) => {
   res.status(200).json(res.advancedResults);
@@ -70,6 +72,17 @@ exports.deleteBlog = asyncHandler(async (req, res, next) => {
   if (!blog) {
     return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
   }
+
+  let filePath = path.join(__dirname, '..', 'postfiles', blog.content);
+  console.log(filePath);
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.error(err);
+      res.status(400).json({ success: false, error: 'Cannor remove the file' });
+      return;
+    }
+    console.log('File is removed');
+  });
 
   blog.remove();
   res.status(200).json({ success: true, data: {} });
