@@ -21,8 +21,8 @@ const app = express();
 // Middleware
 const upload = multer({ storage: storage });
 
+// Passport setup
 require('./config/passport')(passport);
-
 app.use(passport.initialize());
 
 app.use(express.json());
