@@ -10,8 +10,8 @@ services:
     command: /usr/src/app/node_modules/.bin/nodemon server.js
     ports:
       - '5000:5000'
-    depends_on:
-      - mongo
+    # depends_on:
+    #   - mongo
     env_file:
       - ./server/config/config.env
     volumes:
@@ -19,15 +19,15 @@ services:
       - /usr/src/app/node_modules
     networks:
       - app-network
-  mongo:
-    image: mongo
-    container_name: server-mongodb
-    ports:
-      - '37017:27017'
-    volumes:
-      - data-volume:/data/db
-    networks:
-      - app-network
+  # # mongo:
+  #   image: mongo
+  #   container_name: server-mongodb
+  #   ports:
+  #     - '37017:27017'
+  #   volumes:
+  #     - data-volume:/data/db
+  #   networks:
+  #     - app-network
   client:
     build:
       context: ./client
