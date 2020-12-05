@@ -8,7 +8,7 @@ const getBlobName = (originalName, authorName) => {
   // removing "0." from the start of the string.
   const identifier = Math.random().toString().replace(/0\./, '');
   authorName = authorName.replace(/\s/g, '');
-  return `${identifier}-${authorName}-${originalName}-`;
+  return `${identifier}-${authorName}-${originalName}`;
 };
 
 module.exports = getBlobName;
