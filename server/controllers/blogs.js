@@ -4,10 +4,29 @@ const ErrorResponse = require('../utils/error');
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * @apidoc
+ *
+ * route: /blogs
+ * method: GET
+ * description: Get all blogs
+ * response:
+ *   - 200 {status: bool, data: {success: true, count: Number, pagination: Object, data: Array}}
+ */
 exports.getBlogs = asyncHandler(async (req, res, next) => {
   res.status(200).json(res.advancedResults);
 });
 
+/**
+ * @apidoc
+ *
+ * route: /blogs/:id
+ * method: GET
+ * description: Get a blog by ID
+ * response:
+ *   - 200 {status: true, data: BlogObject}
+ *   - 404 {status: false, error: String}
+ */
 exports.getBlog = asyncHandler(async (req, res, next) => {
   const blogID = req.params.id;
 
@@ -20,6 +39,15 @@ exports.getBlog = asyncHandler(async (req, res, next) => {
   res.status(200).json({ success: true, data: blog });
 });
 
+/**
+ * @apidoc
+ *
+ * route: /blogs/featured
+ * method: GET
+ * description: Get featured blogs
+ * response:
+ *   - 200 {status: true, data: BlogObject}
+ */
 exports.getFeaturedBlogs = asyncHandler(async (req, res, next) => {
   const blogs = await Blog.find({ featured: true });
 
