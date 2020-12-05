@@ -3,6 +3,7 @@ const asyncHandler = require('../middlewares/async');
 const ErrorResponse = require('../utils/error');
 const fs = require('fs');
 const path = require('path');
+const getBlobName = require('../utils/fileNamer');
 
 /**
  * @apidoc
@@ -59,11 +60,11 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(`Please upload a file`, 400));
   }
   const file = req.file;
-  if (file.mimetype !== 'text/markdown') {
-    return next(new ErrorResponse('Please upload an markdown file', 400));
+  if (file.mimetype !== 'text/html') {
+    return next(new ErrorResponse('Please upload a valid file', 400));
   }
 
-  req.body.content = req.file.filename;
+  const blobName = getBlobName(req.file.originalname);
 
   const blog = await Blog.create(req.body);
 

@@ -2,7 +2,6 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const storage = require('./utils/storage');
 const errorHandler = require('./middlewares/error');
 const passport = require('passport');
 const multer = require('multer');
