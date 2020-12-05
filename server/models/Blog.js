@@ -23,8 +23,9 @@ const BlogSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'Mention read time']
   },
-  content: {
-    type: String
+  fileName: {
+    type: String,
+    required: [true, 'File name in storage is required']
   },
   slug: {
     type: String
