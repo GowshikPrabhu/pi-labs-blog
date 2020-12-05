@@ -6,14 +6,14 @@ const ErrorResponse = require('../utils/error');
 /**
  * @apidoc
  *
- * route: /register
+ * route: /users/register
  * method: POST
  * description: Register a new user
  * parameters: name-string, email-string, password-string
  * response:
- *   - 200 {status: bool, data: {token: string, expires: string}}
- *   - 401 {status: bool, error: string}
- *   - 400 {status: bool, error: string}
+ *   - 200 {status: true, data: {token: string, expires: string}}
+ *   - 401 {status: false, error: string}
+ *   - 400 {status: false, error: string}
  */
 exports.registerUser = asyncHandler(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -33,14 +33,14 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
 /**
  * @apidoc
  *
- * route: /login
+ * route: /users/login
  * method: POST
  * description: Login a user
  * parameters: email-string, password-string
  * response:
- *   - 200 {status: bool, data: {token: string, expires: string}}
- *   - 401 {status: bool, error: string}
- *   - 400 {status: bool, error: string}
+ *   - 200 {status: true, data: {token: string, expires: string}}
+ *   - 401 {status: false, error: string}
+ *   - 400 {status: false, error: string}
  */
 exports.loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
