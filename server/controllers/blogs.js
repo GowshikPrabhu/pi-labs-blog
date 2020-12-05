@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const getBlobName = require('../utils/fileNamer');
 const getStream = require('into-stream');
+const { BlobServiceClient } = require('@azure/storage-blob');
 
 /**
  * @apidoc
@@ -65,8 +66,22 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse('Please upload a valid file', 400));
   }
 
-  const blobName = getBlobName(req.file.originalname);
+  const blobName = getBlobName(req.file.originalname, req.body.author);
   const fileStream = getStream(req.file.buffer);
+
+  // Create storage connection and connect container and blob
+  const blobServiceClient = BlobServiceClient.fromConnectionString(
+    process.env.STORAGE_URI
+  );
+  const containerClient = blobServiceClient.getContainerClient('blog-posts');
+  const blobClient = containerClient.getBlockBlobClient(blobName);
+
+  const ONE_MB = 1024 * 1024;
+  await blobClient.uploadStream(fileStream, ONE_MB, 5, {
+    blobHTTPHeaders: { blobContentType: 'text/html' }
+  });
+
+  req.body.fileName = blobName;
 
   const blog = await Blog.create(req.body);
 
