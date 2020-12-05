@@ -2,10 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const multer = require('multer');
 const storage = require('./utils/storage');
 const errorHandler = require('./middlewares/error');
 const passport = require('passport');
+const multer = require('multer');
+const memoryStorage = multer.memoryStorage();
+const uploadStrategy = multer({ storage: memoryStorage }).single('blogFile');
 
 // Setup dotenv file for development
 dotenv.config({ path: './config/config.env' });
@@ -18,9 +20,6 @@ const users = require('./routes/v1/users');
 
 const app = express();
 
-// Middleware
-const upload = multer({ storage: storage });
-
 // Passport setup
 require('./config/passport')(passport);
 app.use(passport.initialize());
@@ -32,7 +31,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('common'));
 }
 // setup routes
-app.use('/api/v1/blogs', upload.single('file'), blogs);
+app.use('/api/v1/blogs', uploadStrategy, blogs);
 app.use('/api/v1/users', users);
 
 app.use(errorHandler);
