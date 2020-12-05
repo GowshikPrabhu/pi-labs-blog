@@ -3,6 +3,18 @@ const { getSignedJwtToken } = require('../utils/auth');
 const asyncHandler = require('../middlewares/async');
 const ErrorResponse = require('../utils/error');
 
+/**
+ * @apidoc
+ *
+ * route: /register
+ * method: POST
+ * description: Register a new user
+ * parameters: name-string, email-string, password-string
+ * response:
+ *   - 200 {status: bool, data: {token: string, expires: string}}
+ *   - 401 {status: bool, error: string}
+ *   - 400 {status: bool, error: string}
+ */
 exports.registerUser = asyncHandler(async (req, res, next) => {
   const { name, email, password } = req.body;
 
@@ -18,6 +30,18 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res);
 });
 
+/**
+ * @apidoc
+ *
+ * route: /login
+ * method: POST
+ * description: Login a user
+ * parameters: email-string, password-string
+ * response:
+ *   - 200 {status: bool, data: {token: string, expires: string}}
+ *   - 401 {status: bool, error: string}
+ *   - 400 {status: bool, error: string}
+ */
 exports.loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
@@ -40,6 +64,12 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res);
 });
 
+/**
+ * Send a response to with token in data
+ * @param {Object} user
+ * @param {Number} statusCode
+ * @param {Object} res
+ */
 const sendTokenResponse = (user, statusCode, res) => {
   const tokenObject = getSignedJwtToken(user);
 
