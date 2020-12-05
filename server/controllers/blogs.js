@@ -57,6 +57,17 @@ exports.getFeaturedBlogs = asyncHandler(async (req, res, next) => {
   res.status(200).json({ success: true, data: blogs });
 });
 
+/**
+ * @apidoc
+ *
+ * route: /blogs
+ * method: POST
+ * description: Create a new blog post
+ * parameters: title-string, author-string, readTime-Number, description-string, blogFile-File
+ * response:
+ *   - 200 {status: true, data: BlogObject}
+ *   - 400 {status: false, error: String}
+ */
 exports.createBlog = asyncHandler(async (req, res, next) => {
   if (!req.file) {
     return next(new ErrorResponse(`Please upload a file`, 400));
