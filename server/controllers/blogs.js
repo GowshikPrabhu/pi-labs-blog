@@ -4,6 +4,7 @@ const ErrorResponse = require('../utils/error');
 const fs = require('fs');
 const path = require('path');
 const getBlobName = require('../utils/fileNamer');
+const getStream = require('into-stream');
 
 /**
  * @apidoc
@@ -65,6 +66,7 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
   }
 
   const blobName = getBlobName(req.file.originalname);
+  const fileStream = getStream(req.file.buffer);
 
   const blog = await Blog.create(req.body);
 
