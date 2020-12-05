@@ -42,7 +42,6 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
 
 const sendTokenResponse = (user, statusCode, res) => {
   const tokenObject = getSignedJwtToken(user);
-  console.log(tokenObject);
 
   //  --Used when token is set in cookie
   // const options = {
