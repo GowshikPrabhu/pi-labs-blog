@@ -1,8 +1,6 @@
 const Blog = require('../models/Blog');
 const asyncHandler = require('../middlewares/async');
 const ErrorResponse = require('../utils/error');
-const fs = require('fs');
-const path = require('path');
 const getBlobName = require('../utils/fileNamer');
 const getStream = require('into-stream');
 const { BlobServiceClient } = require('@azure/storage-blob');
@@ -110,8 +108,25 @@ exports.editBlog = asyncHandler(async (req, res, next) => {
   let blog = await Blog.findById(blogID);
 
   if (!blog) {
-    return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
+    return next(
+      new ErrorResponse(`No blog is found with id ${err.params.id}`, 404)
+    );
   }
+
+  const fileName = blog.fileName;
+  const fileStream = getStream(req.file.buffer);
+
+  // Create storage connection and connect container and blob
+  const blobServiceClient = BlobServiceClient.fromConnectionString(
+    process.env.STORAGE_URI
+  );
+  const containerClient = blobServiceClient.getContainerClient('blog-posts');
+  const blobClient = containerClient.getBlockBlobClient(fileName);
+
+  const ONE_MB = 1024 * 1024;
+  await blobClient.uploadStream(fileStream, ONE_MB, 5, {
+    blobHTTPHeaders: { blobContentType: 'text/html' }
+  });
 
   blog = await Blog.findByIdAndUpdate(blogID, req.body, {
     new: true,
