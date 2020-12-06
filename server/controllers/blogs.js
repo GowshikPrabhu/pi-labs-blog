@@ -78,7 +78,7 @@ exports.getFeaturedBlogs = asyncHandler(async (req, res, next) => {
  * route: /blogs
  * method: POST
  * description: Create a new blog post
- * parameters: title-string, author-string, readTime-Number, description-string, blogFile-File
+ * parameters: title-string,author-string,readTime-Number,description-string,featured-bool,blogFile-File
  * response:
  *   - 200 {status: true, data: BlogObject}
  *   - 400 {status: false, error: String}
@@ -120,7 +120,7 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
  * route: /blogs/:id
  * method: PUT
  * description: Edit a blog post
- * parameters: title?-string, author?-string, readTime?-Number, description?-string, blogFile?-File
+ * parameters: title?-string,author?-string,readTime?-Number,description?-string,featured?-bool,blogFile?-File
  * response:
  *   - 200 {status: true, data: BlogObject}
  *   - 400 {status: false, error: String}
