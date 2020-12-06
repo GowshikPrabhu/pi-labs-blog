@@ -102,6 +102,18 @@ exports.getBlogContent = asyncHandler(async (req, res, next) => {
   res.download(`./postfiles/${fname}`, 'content.md');
 });
 
+/**
+ * @apidoc
+ *
+ * route: /blogs/:id
+ * method: PUT
+ * description: Edit a blog post
+ * parameters: title?-string, author?-string, readTime?-Number, description?-string, blogFile?-File
+ * response:
+ *   - 200 {status: true, data: BlogObject}
+ *   - 400 {status: false, error: String}
+ *   - 404 {status: false, error: String}
+ */
 exports.editBlog = asyncHandler(async (req, res, next) => {
   const blogID = req.params.id;
 
