@@ -4,6 +4,7 @@ const ErrorResponse = require('../utils/error');
 const getBlobName = require('../utils/fileNamer');
 const getStream = require('into-stream');
 const { BlobServiceClient } = require('@azure/storage-blob');
+const streamToBuffer = require('../utils/streamToBuffer');
 
 /**
  * @apidoc
@@ -25,7 +26,7 @@ exports.getBlogs = asyncHandler(async (req, res, next) => {
  * method: GET
  * description: Get a blog by ID
  * response:
- *   - 200 {status: true, data: BlogObject}
+ *   - 200 {status: true, data: BlogObject, content: String}
  *   - 404 {status: false, error: String}
  */
 exports.getBlog = asyncHandler(async (req, res, next) => {
@@ -34,10 +35,26 @@ exports.getBlog = asyncHandler(async (req, res, next) => {
   const blog = await Blog.findById(blogID);
 
   if (!blog) {
-    return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
+    return next(
+      new ErrorResponse(`No blog is found with id ${err.params.id}`, 404)
+    );
   }
 
-  res.status(200).json({ success: true, data: blog });
+  const fileName = blog.fileName;
+  // Create storage connection and connect container and blob
+  const blobServiceClient = BlobServiceClient.fromConnectionString(
+    process.env.STORAGE_URI
+  );
+  const containerClient = blobServiceClient.getContainerClient('blog-posts');
+  const blobClient = containerClient.getBlockBlobClient(fileName);
+
+  let downloadedBlockBlob = await blobClient.download();
+
+  const downloaded = (
+    await streamToBuffer(downloadedBlockBlob.readableStreamBody)
+  ).toString();
+
+  res.status(200).json({ success: true, data: blog, content: downloaded });
 });
 
 /**
