@@ -130,16 +130,24 @@ exports.deleteBlog = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
   }
 
-  let filePath = path.join(__dirname, '..', 'postfiles', blog.content);
-  console.log(filePath);
-  fs.unlink(filePath, (err) => {
-    if (err) {
-      console.error(err);
-      res.status(400).json({ success: false, error: 'Cannor remove the file' });
-      return;
-    }
-    console.log('File is removed');
+  const fileName = blog.fileName;
+  // Create storage connection and connect container and blob
+  const blobServiceClient = BlobServiceClient.fromConnectionString(
+    process.env.STORAGE_URI
+  );
+  const containerClient = blobServiceClient.getContainerClient('blog-posts');
+  const blobClient = containerClient.getBlockBlobClient(fileName);
+
+  let response = await blobClient.deleteIfExists({
+    deleteSnapshots: 'include'
   });
+
+  if (response.succeeded) {
+    console.log('Successfully deleted');
+  } else if (response.errorCode) {
+    console.log(response.errorCode);
+    return next(new ErrorResponse('Cannot delete the file', 400));
+  }
 
   blog.remove();
   res.status(200).json({ success: true, data: {} });
