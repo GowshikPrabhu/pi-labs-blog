@@ -121,13 +121,27 @@ exports.editBlog = asyncHandler(async (req, res, next) => {
   res.status(200).json({ success: true, data: blog });
 });
 
+/**
+ * @apidoc
+ *
+ * route: /blogs/:id
+ * method: DELETE
+ * description: Delete a blog post
+ * response:
+ *   - 200 {status: true, data: {}}
+ *   - 400 {status: false, error: String}
+ *   - 404 {status: false, error: String}
+ */
 exports.deleteBlog = asyncHandler(async (req, res, next) => {
   const blogID = req.params.id;
 
   const blog = await Blog.findById(blogID);
 
   if (!blog) {
-    return next(new ErrorResponse(`No blog is found with id ${err.params.id}`));
+    return next(
+      new ErrorResponse(`No blog is found with id ${err.params.id}`),
+      404
+    );
   }
 
   const fileName = blog.fileName;
