@@ -23,6 +23,5 @@ router
   .get(getBlog)
   .put(passport.authenticate('jwt', { session: false }), editBlog)
   .delete(passport.authenticate('jwt', { session: false }), deleteBlog);
-router.route('/content/:filename').get(getBlogContent);
 
 module.exports = router;
