@@ -14,9 +14,9 @@ const BlogHeader = ({ title, description, info }) => {
 
   return (
     <div className={`blog-header ${themeMode}`}>
-      <p className='blog-header-title'>
+      <h1 className='blog-header-title'>
         Lorem ipsum dolor sit amet, consectetur adipsicing elit.
-      </p>
+      </h1>
       <p className='blog-header-description'>
         Lorem ipsum dolor sit amet, consectetur adipsicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
