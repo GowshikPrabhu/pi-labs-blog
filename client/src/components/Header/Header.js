@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../../context/ThemeContext';
+// import { ThemeContext } from '../../context/ThemeContext';
 
 const Header = () => {
   const [navMenu, setNavMenu] = useState('');
   const [searchValue, setSearchValue] = useState('');
-  const { themeMode, setTheme } = useContext(ThemeContext);
+  // const { themeMode, setTheme } = useContext(ThemeContext);
 
   const toggleMenu = () => {
     if (navMenu === '') {
@@ -19,13 +19,13 @@ const Header = () => {
   };
   const onChangeSearch = (e) => setSearchValue(e.target.value);
 
-  const toggleTheme = () => {
-    if (themeMode === 'light') {
-      setTheme('dark');
-    } else if (themeMode === 'dark') {
-      setTheme('light');
-    }
-  };
+  // const toggleTheme = () => {
+  //   if (themeMode === 'light') {
+  //     setTheme('dark');
+  //   } else if (themeMode === 'dark') {
+  //     setTheme('light');
+  //   }
+  // };
 
   return (
     <nav>
@@ -70,7 +70,7 @@ const Header = () => {
               onSubmit={() => console.log(searchValue)}
             />
           </div>
-          {themeMode === 'light' ? (
+          {/* {themeMode === 'light' ? (
             <FontAwesomeIcon
               icon={faMoon}
               className='nav-theme-toggle'
@@ -82,7 +82,7 @@ const Header = () => {
               className='nav-theme-toggle'
               onClick={toggleTheme}
             />
-          )}
+          )} */}
         </div>
       </div>
     </nav>
