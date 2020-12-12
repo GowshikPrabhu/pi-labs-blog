@@ -1,24 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import BlogHeader from './components/BlogHeader/BlogHeader';
 import './ReadBlog.css';
-import img1 from '../../assets/images/img-1.jpg';
-import Markdown from 'markdown-to-jsx';
-import * as example from '../../example.md';
-import { InlineCode, BlockCode } from './components/CodeRenderer/CodeRenderer';
-import ImageRenderer from './components/ImageRenderer/ImageRenderer';
-import BlockQuote from './components/BlockQuote/BlockQuote';
-import PreFormattedBox from './components/PreFormattedBox/PreFormattedBox';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const ReadBlog = () => {
   const [blog, setBlog] = useState('');
   const { themeMode } = useContext(ThemeContext);
   useEffect(() => {
-    fetch(example)
-      .then((response) => response.text())
-      .then((text) => {
-        setBlog(text);
-      });
+    console.log('Read Blog');
   }, []);
 
   return (
@@ -29,18 +18,7 @@ const ReadBlog = () => {
       </div>
       <div className='read-blog-area'>
         <div className='read-blog-content'>
-          <Markdown
-            children={blog}
-            options={{
-              overrides: {
-                InlineCode: InlineCode,
-                BlockCode: BlockCode,
-                img: ImageRenderer,
-                blockquote: BlockQuote,
-                PreFormattedBox: PreFormattedBox
-              }
-            }}
-          />
+          <p>Blog Content</p>
         </div>
       </div>
     </div>
