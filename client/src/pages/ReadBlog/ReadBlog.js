@@ -1,24 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
 import BlogHeader from './components/BlogHeader/BlogHeader';
 import './ReadBlog.css';
+import './content.css';
 import { ThemeContext } from '../../context/ThemeContext';
+import Highlight from './components/Highlight/Highlight';
 
 const ReadBlog = () => {
   const [blog, setBlog] = useState('');
   const { themeMode } = useContext(ThemeContext);
   useEffect(() => {
-    console.log('Read Blog');
+    setBlog('<p>Hello from me</p>');
   }, []);
 
   return (
     <div className={`read-blog ${themeMode}`}>
       <BlogHeader />
-      <div className='start-img'>
-        <img src={img1} alt='start img' width='80%' height='100%' />
-      </div>
       <div className='read-blog-area'>
         <div className='read-blog-content'>
-          <p>Blog Content</p>
+          {/* <div
+            className='html-content'
+            dangerouslySetInnerHTML={{ __html: blog }}
+          ></div> */}
+          <Highlight parsedText={blog} />
         </div>
       </div>
     </div>

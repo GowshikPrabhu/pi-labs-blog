@@ -117,9 +117,20 @@
   margin-top: 0.2rem;
   text-align: center;
 }
+.read-blog img {
+  margin: 10px auto;
+  width: auto !important;
+  clear: both;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
 .read-blog figure img {
-  max-width: 90vw;
+  max-width: 100%;
   max-height: 70vh;
+  width: auto;
   overflow: visible;
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
     0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
@@ -140,7 +151,7 @@
   font-family: 'Fira Code', 'DejaVu Sans Mono', monospace;
   font-size: 0.98rem;
   margin: 0 0 2rem 0;
-  width: 60vw;
+  /* width: 60vw; */
   display: block;
   /* line-height: 1.2; */
   padding: 1rem;
