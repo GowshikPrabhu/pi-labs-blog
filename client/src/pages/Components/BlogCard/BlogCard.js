@@ -36,9 +36,9 @@ const BlogCard = ({ viewMode, id }) => {
             <p>{tag}</p>
           ))}
         </div>
-        <p className='blog-card-title'>
+        <h2 className='blog-card-title'>
           Lorem ipsum dolor sit amet, consectetur adipsicing elit.
-        </p>
+        </h2>
         <p className='blog-card-description'>
           Lorem ipsum dolor sit amet, consectetur adipsicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
