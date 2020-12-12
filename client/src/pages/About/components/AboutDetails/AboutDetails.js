@@ -12,7 +12,7 @@ const AboutDetails = ({ title, description }) => {
   const { themeMode } = useContext(ThemeContext);
   return (
     <div>
-      <p className={`content-title ${themeMode}`}>{title}</p>
+      <h2 className={`content-title ${themeMode}`}>{title}</h2>
       <p className={`content-description ${themeMode}`}>{description}</p>
     </div>
   );

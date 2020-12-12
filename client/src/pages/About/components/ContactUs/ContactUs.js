@@ -7,7 +7,7 @@ const ContactUs = () => {
 
   return (
     <div className='contactus'>
-      <p className={`content-title ${themeMode}`}>Get In Touch</p>
+      <h2 className={`content-title ${themeMode}`}>Get In Touch</h2>
       <div className='contact-body'>
         <div className='contact-body-item left'>
           <div className='contact-title'>

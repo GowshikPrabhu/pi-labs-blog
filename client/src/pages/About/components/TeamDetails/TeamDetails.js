@@ -7,7 +7,7 @@ const TeamDetails = () => {
 
   return (
     <div className='team-details'>
-      <p className={`content-title ${themeMode}`}>Our Team</p>
+      <h2 className={`content-title ${themeMode}`}>Our Team</h2>
       <div className='team-pics'>
         <div className={`avatar-area ${themeMode}`}>
           <img src='https://via.placeholder.com/150' alt='team 1' />
