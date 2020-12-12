@@ -15,7 +15,13 @@ const Home = () => {
       <StartSection />
       <div className={`main-section ${themeMode}`}>
         <BlogCard viewMode='horizontal' id={1} />
-        <div className='multi-cards set-1'>
+        <div className='divider'></div>
+        <BlogCard viewMode='horizontal' id={2} />
+        <div className='divider'></div>
+        <BlogCard viewMode='horizontal' id={3} />
+        <div className='divider'></div>
+        <BlogCard viewMode='horizontal' id={4} />
+        {/* <div className='multi-cards set-1'>
           <BlogCard viewMode='vertical' id={2} />
           <BlogCard viewMode='vertical' id={3} />
           <BlogCard viewMode='vertical' id={4} />
@@ -24,7 +30,7 @@ const Home = () => {
           <BlogCard viewMode='vertical' id={5} />
           <BlogCard viewMode='vertical' id={6} />
           <BlogCard viewMode='vertical' id={7} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
